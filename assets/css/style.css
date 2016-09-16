@@ -1,0 +1,51 @@
+body {
+	background-color: #FCFFF0;
+	text-align: center;
+}
+
+div {
+	border: 5px solid black;
+	padding: 30px;
+	margin: 10px;
+	background-color: #D0D2C4;
+	
+}
+
+.container {
+	background-color: white;
+}
+
+.weather {
+	position: fixed;
+	top: 5px;
+	right: 10px;
+}
+
+.newsBox {
+	height: 200px;
+}
+
+#mainContent {
+	padding: 50px;
+	height: 300px;
+
+}
+
+#todoForm {
+	float: left;
+	height: 200;
+	width: 50%;
+	margin: 20px;
+
+
+	
+}
+
+#todoList{
+	float: left;
+	height: 200;
+	width: 50%;
+	margin:20px;
+
+	
+}
