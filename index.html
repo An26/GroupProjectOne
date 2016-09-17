@@ -16,27 +16,52 @@
 <div class="container">
 	<div class="navBar">class="navBar"</div>
 	<div class="weather">class="weather"</div>
-	<div class="header">Valise</div>
+	<div class="header">Valise
+	<p>Take us with you</p>
+	</div>
 	<div id="mainContent">
-		<div id="todoForm" class="col-md-6">
-		<p>To Do Form</p>
-		<form>
-			<label>Add To Do</label>
-			<input type="add to do" name="to do">
-			<button>Submit</button>
-		</form>
+		<div id="addTravelInfo">
+			<form class="travelInfo">
+				<h3>Add your Information:</h3>
+
+				<label>Name: </label>
+				<input type="addName" id="userName" name="userName" placeholder="John Doe">
+				<br>
+
+				<label>Country: </label>
+				<input type="destinationCounty" name="destinationCountry" id="destinationCountry" placeholder="India">
+				<br>
+
+				<label>City: </label>
+				<input type="destinationCity" name="destinationCity" id="destinationCity" placeholder="Mumbai">
+				<br>
+
+				<label>Arrival Date: </label>
+				<input type="arrivalDate" name="arrivalDate" id="arrivalDate" placeholder="July 1st, 2018">
+				<br>
+			</form>
 		</div>
-		<div id='todoList' class="col-md-6">
-		<p>To Do List</p>
-		<ul>
-			<li>get passport</li>
-			<li>save money</li>
-			<li>buy airline ticket</li>
-		</ul>
+		<div id="todoForm" class="col-md-6">
+			<form>
+				<label>Add To Do</label>
+				<input type="addTodo" name="to do">
+				<button>Submit</button>
+			</form>
+		</div>
+			<div id='todoList' class="col-md-6">
+			<p>To Do List</p>
+			<ul>
+				<li>get passport</li>
+				<li>save money</li>
+				<li>buy airline ticket</li>
+			</ul>
 		</div>
 	</div>	
 	<div class="newsBox">daily news inputs</div>
 </div>
+
+<script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
 
 </body>
 </html>
