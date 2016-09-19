@@ -19,6 +19,17 @@ div {
 	color: white;
 }
 
+#display{
+
+	background-color: none;
+	border-style: none;
+
+	font-size: 30px;
+	text-align: center;
+	-webkit-text-fill-color: #FFF;
+	text-shadow: 0 0 22px black, 0 0 22px black; 
+}
+
 .container {
 	background-color: white;
 }
