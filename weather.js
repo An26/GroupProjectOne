@@ -17,7 +17,7 @@
       console.log(response);
 
       // Transfer content to HTML
-      $('.city').html("<h3>Bujumbura Weather Details</h3>");
+      $('.city').html("<h3>London Weather Details</h3>");
       $(".wind").html("Wind Speed: " + response.wind.speed +" mph");
       $(".humidity").html("Humidity: " + response.main.humidity +"&#37;");
       $(".temp").html("Temperature: " + response.main.temp + "&deg;F");
