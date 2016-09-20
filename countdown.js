@@ -96,7 +96,7 @@
               var seconds = seconds - (days * 24 * 60 * 60 + hours * 60 * 60 + minutes * 60);
 
 
-              var diffInTimeFromNow = userName + " Travels To The " + travelCountry + " In: " + days + " " + "Days" + " : " + hours + " " + "Hours " + ": " + minutes + " " + "Minutes " + ": " + seconds + " " + "Seconds";
+              var diffInTimeFromNow = userName + "&#39;s " + travelCountry + " Travel Begins In: " + days + " " + "Days" + " : " + hours + " " + "Hours " + ": " + minutes + " " + "Minutes " + ": " + seconds + " " + "Seconds";
 
               //console.log(diffInTimeFromNow);
 
