@@ -7,7 +7,7 @@
     <!-- Added Our Style Sheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    
+
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -24,14 +24,13 @@
     <script type="text/javascript" src="assets/BootstrapFormHelpers/js/lang/en_US/bootstrap-formhelpers-countries.en_US.js"></script>
     <script type="text/javascript" src="assets/BootstrapFormHelpers/js/bootstrap-formhelpers-countries.js"></script>
 
-    
+
 
 
     <!-- Added Moment JS -->
     <script src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
-
-
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
@@ -63,41 +62,47 @@
         <div id="mainContent">
             <div id="addTravelInfo">
                 <form class="travelInfo">
-                    <h3>Add your Information:</h3>
+                    <h3>Add your Information: </h3><p>(IMPORTANT: all fields must be entered for submission to go through)</p>
+
 
                     <label>Name: </label>
                     <br>
-                    <input type="addName" id="userName" name="userName" placeholder="John Doe">
+                    <input type="addName" id="userName" name="userName" placeholder="Your Name Here">
 
                     <br>
-                        <label>Country: </label>
-                        <br>
-                        <div id="removeStyling" class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
-                        
-                              <input type="hidden" value="">
-                              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
-                                <span class="bfh-selectbox-option input-medium" data-option=""></span>
-                                <b class="caret"></b>
-                              </a>
-                              <div class="bfh-selectbox-options">
-                                <input type="text" class="bfh-selectbox-filter">
-                                <div role="listbox">
+                    <label>Country: </label>
+                    <br>
+                    <div id="travelCountry" class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
+
+                        <input type="hidden" value="">
+                        <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                            <span class="bfh-selectbox-option input-medium" data-option=""></span>
+                            <b class="caret"></b>
+                        </a>
+                        <div class="bfh-selectbox-options">
+                            <input type="text" class="bfh-selectbox-filter">
+                            <div role="listbox">
                                 <ul role="option">
                                 </ul>
-                                </div>
-                              </div>
                             </div>
-                        
-                
-				<label>City:</label>
-                <br>
-				<input type="destinationCity" name="destinationCity" id="destinationCity" placeholder="Mumbai">
+                        </div>
+                    </div>
+
+
+
+
+                    <form action="" method="post" name="form_citydetails" id="form_citydetails" enctype="multipart/form-data" onsubmit="return false;">
+                        <label>City:</label>
+                        <br>
+                        <!-- <input type="destinationCity" name="destinationCity" id="destinationCity" placeholder="Mumbai">-->
+                        <input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city" placeholder="Type City Name">
+                    </form>
 
                     <br>
 
-                    
-                    <form action="demo_form.asp">
-                      <strong><p>Arrival Date:</p></strong> <input type="date" name="arrivalDate" id="arrivalDate">
+
+                    <form action="provide travel date">
+                        <strong><p>Arrival Date:</p></strong> <input type="date" name="arrivalDate" id="arrivalDate">
                     </form>
 
                 </form>
@@ -128,8 +133,7 @@
 
 
     <script type="text/javascript" src="countdown.js"></script>
-    <script type="text/javascript" src="weather.js"></script>
-
+    <script type="text/javascript" src="city.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
 
 
