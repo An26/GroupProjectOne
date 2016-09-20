@@ -38,9 +38,12 @@ $.ajax({
 		//appending articles to the newsBox section
 		 for (var i = 0; i < results.length; i++) {
 		 	var newArticle = $('<div class="article">');
-		 	var articleURL = $('<p class="articleURL">').append 
+		 	var articleUrlWithImage = $('<a class="articleURL">').attr('target', "_blank").attr('href', results[i].url).html($('<img class="articleThumbnail">').attr('src', results[i].image.thumbnail.contentUrl));
 
+		 	var articleTitle = $('<p class="urlTitle">').html(results[i].name);
 
+		 	newArticle.append(articleTitle); 
+		 	newArticle.append(articleUrlWithImage);  
 		 	newArticle.appendTo($('.newsBox'));
 		 }
 
