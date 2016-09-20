@@ -6,7 +6,7 @@ body {
 
 div {
 	border: 5px solid black;
-	padding: 30px;
+	padding: 20px;
 	margin: 10px;
 	background-color: #D0D2C4;
 	
@@ -20,14 +20,30 @@ div {
 	color: white;
 }
 
+#display{
+
+	background-color: none;
+	border-style: none;
+
+	font-size: 30px;
+	text-align: center;
+	-webkit-text-fill-color: #FFF;
+	text-shadow: 0 0 22px black, 0 0 22px black; 
+}
+
 .container {
 	background-color: white;
 }
 
-.weather {
+#weather {
 	position: fixed;
 	top: 5px;
 	right: 10px;
+	z-index: 100;
+	height: 190px !important;
+	width: 290px !important;
+	opacity: 0.8;
+
 }
 
 .newsBox {
