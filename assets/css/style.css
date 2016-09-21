@@ -6,8 +6,8 @@ body {
 
 div {
 	border: 5px solid black;
-	padding: 20px;
-	margin: 10px;
+	padding: 5px;
+	margin: 5px;
 	background-color: #D0D2C4;
 	
 }
@@ -31,8 +31,20 @@ div {
 	text-shadow: 0 0 22px black, 0 0 22px black; 
 }
 
+.ui-menu .ui-menu-item a,.ui-menu .ui-menu-item a.ui-state-hover, .ui-menu .ui-menu-item a.ui-state-active {
+	font-weight: normal;
+	margin: -1px;
+	text-align:left;
+	font-size:14px;
+	}
+
 .container {
 	background-color: white;
+}
+
+
+.hide{
+	display: none;
 }
 
 #weather {
@@ -45,6 +57,42 @@ div {
 	opacity: 0.8;
 
 }
+
+#travelCountry{
+	background-color: none;
+	border-style: none;
+
+}
+
+
+#travelSubmit {
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #008CBA;
+}
+
+
+.travelInfoButton {
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #008CBA;
+}
+
+
 
 .newsBox {
 	height: 500px;
