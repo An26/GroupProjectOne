@@ -41,6 +41,11 @@ div {
 	background-color: white;
 }
 
+
+.hide{
+	display: none;
+}
+
 #weather {
 	position: fixed;
 	top: 5px;
@@ -71,6 +76,22 @@ div {
     cursor: pointer;
     background-color: #008CBA;
 }
+
+
+.travelInfoButton {
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #008CBA;
+}
+
+
 
 .newsBox {
 	height: 200px;

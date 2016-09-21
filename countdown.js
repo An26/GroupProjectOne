@@ -103,18 +103,24 @@
               $("#display").html(diffInTimeFromNow);
 
 
-          }
+          };
           //Placing the countdown function in an interval that causes it to run every one second 
           var myCountdownInterval = setInterval(myCountdown, 1000);
           $('#arrivalDate').val("");
           $('#userName').val("");
           $('#f_elem_city').val("");
+          $('#addTravelInfo').addClass("hide");
+          $('.travelInfoButton').removeClass("hide");
+
+});
 
 
-      })
+$('.travelInfoButton').on('click', function(){
+    $('#addTravelInfo').removeClass("hide");
+    console.log("I've also been clicked");
+    $('.travelInfoButton').addClass("hide");
 
-
+  });
 
 
   })
-
