@@ -3,3 +3,8 @@
 	border: 2px solid;
 	
 }
+
+#errMsg {
+	color: red;
+	font-weight: bolder;
+}

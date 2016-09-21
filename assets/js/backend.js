@@ -33,6 +33,7 @@ function addFBListenter(endpoint, action, fn) {
 	}
 
 	ref.on(action, fn);
+	//ref.on(action).then(fn);
 }
 
 
@@ -43,8 +44,8 @@ function userChildAdded(childSnapshot, prevChildKey) {
 	console.log(childSnapshot.val());
 	console.log(childSnapshot.key);
 
-	var localUserKey = localStorage.getItem("valiseUser:" + childSnapshot.val().name);
-
+	//var localUserKey = localStorage.getItem("valiseUser:" + childSnapshot.val().name);
+/*
 	if (localUserKey == null) {
 		valiseUser = userObj;
 		localStorage.setItem("valiseUser:" + userObj.name, key);
@@ -53,8 +54,9 @@ function userChildAdded(childSnapshot, prevChildKey) {
 			valiseUser = userObj;
 			console.log(valiseUser);
 	}
+*/
+	updateUIChildAdded();
 
-	updateUIChildAdded();	
 }
 
 function userChildRemoved(childSnapshot, prevChildKey) {
@@ -68,15 +70,20 @@ function userChildChanged(childSnapshot, prevChildKey) {
 function getValiseUser() {
 	return Object.assign({}, valiseUser);
 }
+function setValiseUser(userObj) {
+	valiseUser = userObj;
+}
 // Add User
 function addUser(userObj) {
-	var key = localStorage.getItem("valiseUser:" + userObj.name);
-	if (key == null) {
-		firebase.database().ref('user').push(userObj);
-	}
-	
-}
 
+	firebase.database().ref('/user/' + loginUser.uid).set(userObj);
+}
+/*
+function deleteUser() {
+	valiseUser = null;
+	firebase.database().ref('/user/' + loginUser.uid).set(null);
+}
+*/
 function removeUser(valiseUser) {
 
 }

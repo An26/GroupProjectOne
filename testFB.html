@@ -31,9 +31,12 @@
    				 <label for="passwordInput">Password</label>
    				 <input type="password" class="form-control" id="passwordInput" placeholder="Password" >
   				</div>
-  				<button type="submit" class="btn btn-primary" id="signInBtn">Sign In</button>
+  				<button type="submit" class="btn btn-primary" id="signInBtn">Sign In</button>  
   				<button type="submit" class="btn btn-success" id="signUpBtn">Sign Up</button>
+
 			</form>
+			<div id="errMsg">
+			</div>
 		</div>
 		<div class="col-sm-4 box" id="infoBox">
 			<form>
@@ -55,21 +58,29 @@
   				</div>
 
  
-  				<button type="submit" class="btn btn-primary" id="addBtn">Add</button>
-  				<button type="submit" class="btn btn-success" id="editBtn">Edit</button>
-  				<button type="submit" class="btn btn-warning" id="deleteBtn">Delete</button>
+  				<button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
   	
 			</form>
 			
 		</div>
 		<div class="col-sm-4 box" id="toDoListBox">
-			
+			<table class="table table-hover" id='toDoListTable'>
+				<thead>
+					<tr>
+						<th>To Do List</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+							
+				</tbody>
+			</table>			
 		</div>
 			
 	</div>	
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4 box" id="signOutBox">
-			<button type="submit" class="btn btn-primary" id="signOutBtn">Sign Out</button>
+			<button type="button" class="btn btn-primary" id="signOutBtn">Sign Out</button>
 		</div>
 		
 	</div>
@@ -79,7 +90,7 @@
 
 
 <script src="assets/js/backend.js" type="text/javascript" charset="utf-8" async defer></script>
-
+<script src="assets/js/auth.js" type="text/javascript" charset="utf-8" async defer></script>
 <script src="assets/js/testFB.js" type="text/javascript" charset="utf-8" async defer></script>
 
 	
