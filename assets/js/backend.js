@@ -63,38 +63,7 @@ function getToDoListValue(snapshot) {
 	toDoList = snapshot.val();
 	updateUIGetToDoListValue(getValiseToDoList());
 }
-/*
-function toDoListChildAdded(childSnapshot, prevChildKey) {
-	console.log('toDoListChildAdded');
-	if (childSnapshot.val() == null) return;
-	var userObj = childSnapshot.val();
-	var key = childSnapshot.key;
-	console.log(childSnapshot.val());
-	console.log(childSnapshot.key);
 
-	//var localUserKey = localStorage.getItem("valiseUser:" + childSnapshot.val().name);
-
-	if (localUserKey == null) {
-		valiseUser = userObj;
-		localStorage.setItem("valiseUser:" + userObj.name, key);
-		console.log(valiseUser);
-	} else if (localUserKey == key) {
-			valiseUser = userObj;
-			console.log(valiseUser);
-	}
-
-	updateUIChildAdded();
-
-}
-
-function userChildRemoved(childSnapshot, prevChildKey) {
-	
-}
-
-function userChildChanged(childSnapshot, prevChildKey) {
-	
-}
-*/
 // Helper Function, e.g. called by click Listeners
 function getValiseUser() {
 	return Object.assign({}, valiseUser);
