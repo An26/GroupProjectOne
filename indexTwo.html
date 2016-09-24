@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Valise</title>
+
+    <!-- Materialize: Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+    <!-- materialize css sheet -->
+    <link rel="stylesheet" type="text/css" href="assets/css/materialize.css">
+
+    <!-- <link rel="stylesheet" href="assets/BootstrapFormHelpers/dist/css/bootstrap-formhelpers.css">
+    -->
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Gravitas+One|Playfair+Display" rel="stylesheet">
+
+    <!-- Our local style Sheet -->
+    <link rel="stylesheet" type="text/css" href="assets/css/styleTwo.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
+    <!-- Added Moment JS -->
+    <script src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+
+    <!-- google APIs -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <!-- Materialize: Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+    <!-- can't mix boostrap and materialize, comment out for now... -->
+    <script type="text/javascript" src="assets/BootstrapFormHelpers/dist/js/bootstrap-formhelpers.js"></script>
+    <script type="text/javascript" src="assets/BootstrapFormHelpers/js/bootstrap-formhelpers-selectbox.js"></script>
+    <script type="text/javascript" src="assets/BootstrapFormHelpers/js/lang/en_US/bootstrap-formhelpers-countries.en_US.js"></script>
+    <script type="text/javascript" src="assets/BootstrapFormHelpers/js/bootstrap-formhelpers-countries.js"></script>
+
+</head>
+
+<body>
+
+    <div class="parallax-container">
+        <div class="parallax"><img id="parallaxImageOne" src="assets/images/wallstreet.jpg"></div>
+
+        <div id="headerTitle">
+            <h1>Valise</h1>
+            <h4>Take us with you</h4>
+        </div>
+
+        <!-- adding weather into the main content/header/parallax -->
+        <div id="weather">
+        <span class="city"></span>
+        <span class="wind"></span>
+        <br>
+        <span class="humidity"></span>
+        <br>
+        <span class="temp"></span>
+        </div>
+        
+        <br>
+        <br>
+
+        <div>
+            <span id="display"></span>
+        </div>
+        <br>
+
+        <div id="todoItemBox">
+            <div id='todoList'>
+                <h5>To Do List:</h5>
+                <form action="#">
+                    <p>
+                        <input type="checkbox" id="test5" class="userInput" value="input">
+                        <label for="test5">get passport</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="test5" class="userInput" value="input">
+                        <label for="test5">save money</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="test5" class="userInput" value="input">
+                        <label for="test5">buy airline ticket</label>
+                    </p>
+                </form>
+            </div>
+            <div class="row">
+                <div class="input-field">
+                    <input placeholder="add to do" id="addTodo" type="text" class="addTodo">
+                    <!-- <label for="addingToTheList">add to do: </label> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+<div id="newsContainer">
+    <span class="newsBox">
+        <h1>daily news</h1>
+        <button class="travelInfoButton hide">Change Travel Info</button>
+    </span>
+</div>
+
+<div class="parallax-container travelPlans">
+    <div class="parallax travelImage"><img src="assets/images/suitcaseWallpaper.jpg"></div>
+    <div id="travelPlans">
+        <h3>Travel Plans</h3>
+    </div>
+</div>
+
+
+
+
+<div class="addingTravelInfoContainer">
+    <!-- removing navBar atm... -->
+    <!-- <div class="navBar">class="navBar"</div> -->
+
+    <!--  the form to add travel info that will be placed on the landing page
+    <div id="addTravelInfo">
+        <form class="travelInfo">
+            <h3>Add your Information: </h3>
+            <p>(IMPORTANT: all fields must be entered for submission to go through)</p>
+
+
+            <label>Name: </label>
+            <br>
+            <input type="addName" id="userName" name="userName" placeholder="Your Name Here">
+
+            <br>
+            <label>Country: </label>
+            <br>
+            <div id="travelCountry" class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
+
+                <input type="hidden" value="">
+                <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                    <span class="bfh-selectbox-option input-medium" data-option=""></span>
+                    <b class="caret"></b>
+                </a>
+                <div class="bfh-selectbox-options">
+                    <input type="text" class="bfh-selectbox-filter">
+                    <div role="listbox">
+                        <ul role="option">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <form action="" method="post" name="form_citydetails" id="form_citydetails" enctype="multipart/form-data" onsubmit="return false;">
+                <label>City:</label>
+                <br>
+                <input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city" placeholder="Type City Name">
+            </form>
+
+            <br>
+
+            <form action="provide travel date">
+                <strong><p>Arrival Date:</p></strong> <input type="date" name="arrivalDate" id="arrivalDate">
+            </form>
+
+        </form>
+        <br>
+        <button id="travelSubmit">Submit Info</button>
+    </div> -->
+</div>
+
+    <script type="text/javascript" src="countdown.js"></script>
+    <script type="text/javascript" src="weather.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="newsApp.js"></script>
+    <script type="text/javascript" src="todoListAnimations.js"></script>
+    <script type="text/javascript" src="assets/js/todoListAnimations.js"></script>
+
+</body>
+
+</html>
