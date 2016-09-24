@@ -1,14 +1,14 @@
 
 //
 var valiseUser = null;
-var loginUser = '';
+var loginUser = null;
+var toDoList = {list: []};
 //<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 function User(name, city, country, date) {
 	this.name = name;
 	this.city = city;
 	this.country = country;
 	this.date = date;
-	this.toDoList = [];
 }
 
 // Initialize Firebase
@@ -24,20 +24,48 @@ function initializeFireBase () {
   	firebase.initializeApp(config);
 }
 
-function addFBListenter(endpoint, action, fn) {
+function getRef(endpoint) {
 	var ref;
 	if (endpoint == '') {
 		ref = firebase.database().ref();
 	} else {
 		ref = firebase.database().ref(endpoint);
 	}
-
-	ref.on(action, fn);
-	//ref.on(action).then(fn);
+	return ref;
 }
+function addFBListenter(endpoint, action, fn) {
+	var ref = getRef(endpoint);
+	ref.on(action, fn);
+}
+function removeFBListener(endpoint, action, fn) {
+	var ref = getRef(endpoint);
+	ref.off(action, fn);
+}
+// Firebase Listeners
+function getUserValue(snapshot) {
+	console.log('getUserValue');
+	// when the user sign up first time, no snapshot.val()
+	// is defined. Do nothing.
+	if (snapshot.val() == null) return;
 
+	console.log('snapshot.key: ' + snapshot.key);
 
-function userChildAdded(childSnapshot, prevChildKey) {
+	setValiseUser(snapshot.val());
+	// Update UI
+	updateUIGetUserValue(getValiseUser());
+ 
+}
+function getToDoListValue(snapshot) {
+	console.log('getToDoListValue');
+	if (snapshot.val() == null) return;
+	console.log('snapshot.key: ' + snapshot.key);
+	console.log(snapshot.val());
+	toDoList = snapshot.val();
+	updateUIGetToDoListValue(getValiseToDoList());
+}
+/*
+function toDoListChildAdded(childSnapshot, prevChildKey) {
+	console.log('toDoListChildAdded');
 	if (childSnapshot.val() == null) return;
 	var userObj = childSnapshot.val();
 	var key = childSnapshot.key;
@@ -45,7 +73,7 @@ function userChildAdded(childSnapshot, prevChildKey) {
 	console.log(childSnapshot.key);
 
 	//var localUserKey = localStorage.getItem("valiseUser:" + childSnapshot.val().name);
-/*
+
 	if (localUserKey == null) {
 		valiseUser = userObj;
 		localStorage.setItem("valiseUser:" + userObj.name, key);
@@ -54,7 +82,7 @@ function userChildAdded(childSnapshot, prevChildKey) {
 			valiseUser = userObj;
 			console.log(valiseUser);
 	}
-*/
+
 	updateUIChildAdded();
 
 }
@@ -66,30 +94,31 @@ function userChildRemoved(childSnapshot, prevChildKey) {
 function userChildChanged(childSnapshot, prevChildKey) {
 	
 }
-// Helper Function
+*/
+// Helper Function, e.g. called by click Listeners
 function getValiseUser() {
 	return Object.assign({}, valiseUser);
 }
 function setValiseUser(userObj) {
 	valiseUser = userObj;
 }
-// Add User
-function addUser(userObj) {
+function setValiseToDoList(index, item) {
+	toDoList.list[index] = item;	
+}
+function addValiseToDoList(item) {
+	toDoList.list.push(item);
+}
+function deleteValiseToDoList(index) {
+	toDoList.list.splice(index, 1);
+}
+function getValiseToDoList() {
+	return toDoList.list;
+}
+function setUser(userObj) {
 
 	firebase.database().ref('/user/' + loginUser.uid).set(userObj);
 }
-/*
-function deleteUser() {
-	valiseUser = null;
-	firebase.database().ref('/user/' + loginUser.uid).set(null);
+function setFBList() {
+	firebase.database().ref('/toDoList/' + loginUser.uid).set(toDoList);
 }
-*/
-function removeUser(valiseUser) {
-
-}
-
-function changeUser(valiseUser) {
-
-}
-
 
