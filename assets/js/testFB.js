@@ -155,6 +155,7 @@ function clickDeleteItem() {
 	var index = $(this).data('index');
 	console.log('index: ' + index);
 	deleteValiseToDoList(index);
+	$('#toDoList').empty();
 	setFBList();
 }
 // Execution
