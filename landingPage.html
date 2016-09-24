@@ -17,6 +17,9 @@
 
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+
+
     <script type="text/javascript" src="assets/BootstrapFormHelpers/dist/js/bootstrap-formhelpers.js"></script>
     <script type="text/javascript" src="assets/BootstrapFormHelpers/js/bootstrap-formhelpers-selectbox.js"></script>
     <script type="text/javascript" src="assets/BootstrapFormHelpers/js/lang/en_US/bootstrap-formhelpers-countries.en_US.js"></script>
@@ -94,7 +97,7 @@
                                     <label for="passwordInput">Password</label>
                                     <input type="password" class="form-control" id="passwordInput" placeholder="Password">
                                 </div>
-
+                                <button type="submit" class="btn btn-primary" id="signUpBtn">Sign Up</button>
                             </form>
                             <div id="errMsg">
                             </div>
@@ -139,7 +142,7 @@
                                 </div>
 
 
-                                <button type="submit" class="btn btn-primary" id="submitBtn">Sign Up</button>
+                                <button  onclick="location.href = 'index.html'"  type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
 
                             </form>
 
@@ -173,8 +176,19 @@
     </div>
 
 
+   <!--
+    
+    <script type="text/javascript" src="assets/js/auth.js"></script>
+    <script type="text/javascript" src="assets/js/backend.js"></script>
+    <script type="text/javascript" src="assets/js/testFB.js"></script>
+    --> 
+    <script type="text/javascript" src="assets/js/backend.js"></script>
+    <script type="text/javascript" src="assets/js/city.js"></script>
+    <script type="text/javascript" src="assets/js/auth.js"></script>
+    <script type="text/javascript" src="assets/js/testFB.js"></script>
+  
 
-    <script type="text/javascript" src="city.js"></script>
+
 </body>
 
 </html>

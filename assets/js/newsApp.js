@@ -1,15 +1,3 @@
-//-------------testing user input/data------
-
-var user =
-	{	name: "Jane Doe",
-	    city: 'Hess',
-	    country: 'Germany',
-	    date: "null",
-	    toDoList: ['buy airline tickets', 'save $$', 'get passports'],
-	};
-
-
-
 // --------GOOGLE NEWS API-------------An Huynh-------------
 
 function newsAPI() {
