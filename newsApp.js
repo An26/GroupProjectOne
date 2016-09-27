@@ -27,7 +27,6 @@ $.ajax({
 		 for (var i = 0; i < results.length; i++) {
 		 	var newArticle = $('<div class="article">');
 		 	var articleUrlWithImage = $('<a class="articleURL">').attr('target', "_blank").attr('href', results[i].url).html($('<img class="articleThumbnail">').attr('src', results[i].image.thumbnail.contentUrl));
-
 		 	var articleTitle = $('<p class="urlTitle">').html(results[i].name);
 
 		 	newArticle.append(articleTitle); 

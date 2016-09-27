@@ -32,36 +32,52 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
     <!-- can't mix boostrap and materialize, comment out for now... -->
-    <script type="text/javascript" src="assets/BootstrapFormHelpers/dist/js/bootstrap-formhelpers.js"></script>
+<!--     <script type="text/javascript" src="assets/BootstrapFormHelpers/dist/js/bootstrap-formhelpers.js"></script>
     <script type="text/javascript" src="assets/BootstrapFormHelpers/js/bootstrap-formhelpers-selectbox.js"></script>
     <script type="text/javascript" src="assets/BootstrapFormHelpers/js/lang/en_US/bootstrap-formhelpers-countries.en_US.js"></script>
-    <script type="text/javascript" src="assets/BootstrapFormHelpers/js/bootstrap-formhelpers-countries.js"></script>
+    <script type="text/javascript" src="assets/BootstrapFormHelpers/js/bootstrap-formhelpers-countries.js"></script> -->
 
 </head>
 
 <body>
 
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+            <!-- adding weather into the fixed nav-bar -->
+            <div id="weather" class="left">
+                <ul class="miniWeatherDisplayHide collapsible" data-collapsible="popout">
+                    <li>
+                        <div class="collapsible-header weatherIcon"><i class="material-icons">filter_drama</i>
+                        </div>
+                        <div class="collapsible-body weatherInfo">
+                            <div class="city"></div>
+                            <div class="temp"></div>
+                            <div class="wind"></div>
+                            <div class="humidity"></div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        
+
+            <a href="#!" class="center brand-logo">Valise</a>
+            <a href="#" class="right changeLink">Change Plans</a>  
+            </ul>
+          </div>
+        </nav>
+    </div>
+
     <div class="parallax-container">
         <div class="parallax"><img id="parallaxImageOne" src="assets/images/wallstreet.jpg"></div>
 
         <div id="headerTitle">
-            <h1>Valise</h1>
+            <h1>V</h1>
             <h4>Take us with you</h4>
         </div>
-
-        <!-- adding weather into the main content/header/parallax -->
-        <div id="weather">
-        <span class="city"></span>
-        <span class="wind"></span>
-        <br>
-        <span class="humidity"></span>
-        <br>
-        <span class="temp"></span>
-        </div>
-        
         <br>
         <br>
-
         <div>
             <span id="display"></span>
         </div>
@@ -99,25 +115,65 @@
 <div id="newsContainer">
     <span class="newsBox">
         <h1>daily news</h1>
-        <button class="travelInfoButton hide">Change Travel Info</button>
+
     </span>
 </div>
+
+<!-- adding a newsBox carousel -->
+
+<!-- <div id="newsContainer">
+    <span class="newsBox carousel carousel-slider center" data-indicators="true">
+    <div class="carousel-fixed-item center">
+        <h1>daily news</h1>
+    </div>
+    <div class="carousel-item red white-text" href="#">
+        <p>first panel</p>
+    </div>
+    </span>
+</div> -->
+
+
+
+<!-- end of news carousel -->
+
 
 <div class="parallax-container travelPlans">
     <div class="parallax travelImage"><img src="assets/images/suitcaseWallpaper.jpg"></div>
     <div id="travelPlans">
         <h3>Travel Plans</h3>
     </div>
+    <div class="flightPlans">
+        <table>
+        <p>Flight Plan Itinerary</p>
+        <thead>
+          <tr>
+              <th data-field="date">Date</th>
+              <th data-field="from">From Location</th>
+              <th data-field="to">To Location</th>
+              <th data-field="time">Time</th>
+              <th data-field="gate">Gate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="date" name="date" placeholder="7/18/2017"></td>
+            <td><input type="text" name="from" placeholder="Austin"></td>
+            <td><input type="text" name="to" placeholder="Houston"></td>
+            <td><input type="time" name="time" placeholder="9:45 AM"></td>
+            <td><input type="text" name="gate" placeholder="B5"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
 </div>
 
 
 
 
-<div class="addingTravelInfoContainer">
-    <!-- removing navBar atm... -->
-    <!-- <div class="navBar">class="navBar"</div> -->
-
-    <!--  the form to add travel info that will be placed on the landing page
+<!-- <div class="addingTravelInfoContainer">
+    the form to add travel info that will be placed on the landing page
     <div id="addTravelInfo">
         <form class="travelInfo">
             <h3>Add your Information: </h3>
@@ -162,15 +218,14 @@
         </form>
         <br>
         <button id="travelSubmit">Submit Info</button>
-    </div> -->
-</div>
+    </div>
+</div> -->
 
     <script type="text/javascript" src="countdown.js"></script>
     <script type="text/javascript" src="weather.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
     <script type="text/javascript" src="newsApp.js"></script>
     <script type="text/javascript" src="todoListAnimations.js"></script>
-    <script type="text/javascript" src="assets/js/todoListAnimations.js"></script>
 
 </body>
 

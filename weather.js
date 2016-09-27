@@ -16,11 +16,20 @@
       // Log the resulting object
       console.log(response);
 
+      //--------------------------------an's search for weather icons!-------------
+      // var iconCode = response.weather[0].icon;
+      // var weatherIconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+      // console.log(iconCode);
+      // console.log(weatherIconUrl);
+
+
       // Transfer content to HTML
-      $('.city').html("<h5>London Weather Details</h5>");
+      $('.city').html("City, Country");
       $(".wind").html("Wind Speed: " + response.wind.speed +" mph");
       $(".humidity").html("Humidity: " + response.main.humidity +"&#37;");
-      $(".temp").html("Temperature: " + response.main.temp + "&deg;F");
+      $(".temp").html(response.main.temp + "&deg;F");
+      //------------adding weather icons: an---------
+      $('.weatherIcon').html("<img src='http://openweathermap.org/img/w/" + response.weather[0].icon + ".png' alt='Icon depicting current weather.' height='70px' width='70px'>");
 
       // Log the data in the console as well
       console.log("Wind Speed: " + response.wind.speed);

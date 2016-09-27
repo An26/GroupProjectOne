@@ -4,7 +4,30 @@ body {
 	font-family: 'Playfair Display', serif;
 }
 
-/*taking away general "div" styling for more personalization per each div - an*/
+/*---------------nav bar--------------*/
+
+nav .nav-wrapper {
+	background: white;
+	border-bottom: 5px solid black;
+	color: #660000;
+	height: 90px;
+}
+
+.nav-wrapper .brand-logo{
+	color: #660000;
+	font-size: 40px;
+	margin-top: 10px;
+}
+
+.changeLink {
+	color: #660000;
+	margin-right: 20px;
+	font-size: 20px;
+	margin-top: 12px;
+}
+
+/*--------------parallax main display-------------------------*/
+
 .parallaxContainerTop, #mainContent, #miscContainer, #newsContainer {
 	border: 5px solid #black;
 	padding: 20px;
@@ -16,7 +39,9 @@ body {
 }
 
 .parallax img {
-	opacity: 0.3;
+	background: black;
+	opacity: 0.1;
+	
 }
 
 #parallaxImageOne {
@@ -25,16 +50,13 @@ body {
 }
 
 #headerTitle {
-	margin-top: 100px;
-	font-size: 70px;
+	font-size: 100px;
 	color: black;
 	text-align: center;
-	/*text-shadow: 0 0 22px white, 0 0 22px white; */
-	/*font-family: 'Gravitas One', cursive;*/
 }
 
 #headerTitle h1 {
-	font-size: 70px;
+	font-size: 80px;
 }
 
 
@@ -44,9 +66,7 @@ body {
 	font-size: 30px;
 	text-align: center;
 	-webkit-text-fill-color: #FFF;
-	text-shadow: 0 0 22px black, 0 0 22px black; 
-
-	
+	text-shadow: 0 0 22px black, 0 0 22px black; 	
 }
 
 .ui-menu .ui-menu-item a,.ui-menu .ui-menu-item a.ui-state-hover, .ui-menu .ui-menu-item a.ui-state-active {
@@ -61,16 +81,31 @@ body {
 	display: none;
 }
 
+/*-----------------------weather display-------------------*/
+
 #weather {
-	position: absolute;
+/*	position: absolute;
 	top: 5px;
-	right: 10px;
-	z-index: 100;
-	height: 190px !important;
-	width: 290px !important;
-	opacity: 1.0;
+	left: 10px;
+	z-index: 100;*/
+	/*height: 190px !important;
+	width: 290px !important;*/
+
+	/*----adding changes to the weather display - an ---------------*/
+	/*line-height: 130%;*/
+}
+
+.weatherIcon{
+	margin-top: -10px;
 
 }
+
+.weatherInfo {
+	color:white;
+	font-weight: bold;
+}
+
+
 
 #travelCountry{
 	background-color: none;
@@ -115,14 +150,14 @@ body {
 .newsBox .article {
 	text-align: center;
 	width: 30%;
-	height: auto;
+	/*height: auto;*/
 	display: inline-block;
 }
 
 .newsBox {
 	height: 500px;
 	width: 100%;
-    overflow: auto;
+/*    overflow: auto;*/
  
 }
 
