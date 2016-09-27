@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Test FB</title>
+	<title>Test FB2 toDoList</title>
 	<link rel="stylesheet" href="assets/css/testFB.css">
 <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>  
 
@@ -21,24 +21,9 @@
 <body>
 <div class="container">
 	<div class="row">
-		<div class="col-sm-4 box" id="signInBox">
-			<form>
-  				<div class="form-group login">
-  				  <label for="emailInput">Email</label>
-  				  <input type="email" class="form-control" id="emailInput" placeholder="Email">
-  				</div>
-  				<div class="form-group">
-   				 <label for="passwordInput">Password</label>
-   				 <input type="password" class="form-control" id="passwordInput" placeholder="Password" >
-  				</div>
-  				<button type="submit" class="btn btn-primary" id="signInBtn">Sign In</button>  
-  				<button type="submit" class="btn btn-success" id="signUpBtn">Sign Up</button>
-
-			</form>
-			<div id="errMsg">
-			</div>
+	
 		</div>
-		<div class="col-sm-4 box" id="infoBox">
+		<div class="col-sm-4 col-sm-offset-4 box" id="infoBox">
 			<form>
   				<div class="form-group">
   				  <label for="nameInput">Name</label>
@@ -58,11 +43,22 @@
   				</div>
 
  
-  				<button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
-  				<button type="submit" class="btn btn-primary" id="weatherPageBtn">Weather/Counter</button>
+  	         <div id="errMsg">
+              </div>
 			</form>
 			
 		</div>
+		<div class="col-sm-4 box" id="toDoListBox">
+   			<div class="input-group">
+     			<input type="text" class="form-control" id="listItem" placeholder="To Do List">
+    		    <span class="input-group-btn">
+   		     	<button class="btn btn-primary" type="button" id="addToDoList"><span class="glyphicon glyphicon-plus-sign"></button>
+     		   </span>
+    		</div>
+			<hr>
+        <div id="toDoList">
+    		</div>
+
 			
 	</div>	
 	<div class="row">
@@ -78,7 +74,7 @@
 
 <script src="assets/js/backend.js" type="text/javascript" charset="utf-8" async defer></script>
 <script src="assets/js/auth.js" type="text/javascript" charset="utf-8" async defer></script>
-<script src="assets/js/testFB.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="assets/js/testFB2.js" type="text/javascript" charset="utf-8" async defer></script>
 
 	
 </body>
