@@ -40,7 +40,7 @@ nav .nav-wrapper {
 
 .parallax img {
 	background: black;
-	opacity: 0.1;
+	opacity: 0.5;
 	
 }
 
@@ -53,6 +53,10 @@ nav .nav-wrapper {
 	font-size: 100px;
 	color: black;
 	text-align: center;
+
+	color: #660000;
+    text-shadow: #000 0px 0px 1px;
+    -webkit-font-smoothing: antialiased;
 }
 
 #headerTitle h1 {
@@ -157,7 +161,6 @@ nav .nav-wrapper {
 .newsBox {
 	height: 500px;
 	width: 100%;
-/*    overflow: auto;*/
  
 }
 
@@ -181,4 +184,25 @@ nav .nav-wrapper {
 
 .travelPlans{
 	height: 500px;
+	overflow: all;
+}
+
+.flightNotes label, .lodgingNotes label, .localTransportation label{
+	color: white;
+	color: white;
+    text-shadow: #000 0px 0px 1px;
+    -webkit-font-smoothing: antialiased;
+	font-size: 25px;
+}
+
+.input-field label.active {
+	font-size: medium !important;
+}
+
+textarea.materialize-textarea {
+	background: white;
+	color: black !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	padding-left: 10px !important;
 }

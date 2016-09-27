@@ -70,7 +70,7 @@
     </div>
 
     <div class="parallax-container">
-        <div class="parallax"><img id="parallaxImageOne" src="assets/images/wallstreet.jpg"></div>
+        <div class="parallax"><img id="parallaxImageOne" src="assets/images/valiseWallpaper.jpg"></div>
 
         <div id="headerTitle">
             <h1>V</h1>
@@ -114,7 +114,7 @@
 
 <div id="newsContainer">
     <span class="newsBox">
-        <h1>daily news</h1>
+        <h4>daily news</h4>
 
     </span>
 </div>
@@ -133,40 +133,38 @@
 </div> -->
 
 
-
 <!-- end of news carousel -->
 
 
 <div class="parallax-container travelPlans">
     <div class="parallax travelImage"><img src="assets/images/suitcaseWallpaper.jpg"></div>
     <div id="travelPlans">
-        <h3>Travel Plans</h3>
+        <h4>Travel Plans</h4>
     </div>
-    <div class="flightPlans">
-        <table>
-        <p>Flight Plan Itinerary</p>
-        <thead>
-          <tr>
-              <th data-field="date">Date</th>
-              <th data-field="from">From Location</th>
-              <th data-field="to">To Location</th>
-              <th data-field="time">Time</th>
-              <th data-field="gate">Gate</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="date" name="date" placeholder="7/18/2017"></td>
-            <td><input type="text" name="from" placeholder="Austin"></td>
-            <td><input type="text" name="to" placeholder="Houston"></td>
-            <td><input type="time" name="time" placeholder="9:45 AM"></td>
-            <td><input type="text" name="gate" placeholder="B5"></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="row travelNotes">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12 flightNotes">
+          <textarea id="icon_prefix2" class="materialize-textarea" placeholder="Austin to Atlanta       Date: 7/16/2017      Time: 9:00am      Gate:A15 "></textarea>
+          <label>Flight Notes</label>
+        </div>
+      </div>
+    </form>
+    <br>
+    <br>
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s6 lodgingNotes">
+              <textarea id="icon_prefix2" class="materialize-textarea" placeholder="Air b and b     Date: 7/18/2017 - 7/20/2017"></textarea>
+              <label>Lodging Notes</label>
+            </div>
+            <div class="input-field col s6 localTransportation">
+              <textarea id="icon_prefix2" class="materialize-textarea" placeholder="Metro-Rail from Atlanta to Brookhaven   Time: 3:00pm    Date: 7/20/2017 "></textarea>
+              <label>Local Transportation Notes</label>
+            </div>
+        </div>
+    </form>
     </div>
-
-
 </div>
 
 
