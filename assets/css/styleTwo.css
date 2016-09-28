@@ -241,10 +241,14 @@ div .collapsible-header {
 
 .flightNotes label, .lodgingNotes label, .localTransportation label{
 	color: black;
-/*    text-shadow: #000 0px 0px 1px;
-    -webkit-font-smoothing: antialiased;*/
+    text-shadow: #FFF 0px 0px 1px;
+    -webkit-font-smoothing: antialiased;
 	font-size: 25px;
 }
+
+/*.flightNotes label, .lodgingNotes label, .localTransportation label:active{
+	color: #660000;
+}*/
 
 .input-field label.active {
 	font-size: medium !important;
@@ -258,3 +262,4 @@ textarea.materialize-textarea {
 	padding-bottom: 5px !important;
 	padding-left: 10px !important;
 }
+
