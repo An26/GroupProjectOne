@@ -261,6 +261,14 @@
 
 p{
 
+  font-size: 30px;
+  text-align: center;
+  -webkit-text-fill-color: #9E8871;
+  text-shadow: 0 0 35px #660000 , 0 0 30px #660000; 
+}
+
+#valiseText{
+
   font-size: 50px;
   text-align: center;
   -webkit-text-fill-color: #9E8871;
@@ -322,6 +330,8 @@ h3 span{
    padding: 70px;
 
 }
+
+
 
 #text{
 

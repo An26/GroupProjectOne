@@ -41,7 +41,7 @@
 
     <div class="header navbar navbar-fixed-top">
         <div class="col-xs-4 marginTop">
-            <p>valise</p>
+            <p id="valiseText">valise</p>
             <p id="shiftRight">take us with you</p>
         </div>
         <div class="col-xs-2"></div>
@@ -85,6 +85,13 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <h1 id="text">Sign Up</h1>
+                             <div id="msgForUser">
+                            <p>We're Excited About Your Next Trip!</p>
+                            <br>
+                            <p>Click the main page button below to head to your dashboard</p>
+                            <br>
+                            <button onclick="location.href = 'index.html'" type='submit' class='btn btn-primary' id='mainPageBtn'>Main Page</button>
+                             </div>
                         </div>
                         <div class="col-sm-6 box" id="signInBox">
 
@@ -142,7 +149,7 @@
                                 </div>
 
 
-                                <button  onclick="location.href = 'index.html'"  type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+                                <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
 
                             </form>
 
@@ -186,6 +193,7 @@
     <script type="text/javascript" src="assets/js/city.js"></script>
     <script type="text/javascript" src="assets/js/auth.js"></script>
     <script type="text/javascript" src="assets/js/testFB.js"></script>
+ 
   
 
 

@@ -15,10 +15,12 @@
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Gravitas+One|Playfair+Display" rel="stylesheet">
 
+    <!-- Our local style Sheet -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
 
     <!-- Added Moment JS -->
     <script src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
@@ -31,37 +33,53 @@
     <!-- Materialize: Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
-    <!-- can't mix boostrap and materialize, comment out for now... 
-    <script type="text/javascript" src="assets/BootstrapFormHelpers/dist/js/bootstrap-formhelpers.js"></script>
+    <!-- can't mix boostrap and materialize, comment out for now... -->
+<!--     <script type="text/javascript" src="assets/BootstrapFormHelpers/dist/js/bootstrap-formhelpers.js"></script>
     <script type="text/javascript" src="assets/BootstrapFormHelpers/js/bootstrap-formhelpers-selectbox.js"></script>
     <script type="text/javascript" src="assets/BootstrapFormHelpers/js/lang/en_US/bootstrap-formhelpers-countries.en_US.js"></script>
-    <script type="text/javascript" src="assets/BootstrapFormHelpers/js/bootstrap-formhelpers-countries.js"></script>
--->
+    <script type="text/javascript" src="assets/BootstrapFormHelpers/js/bootstrap-formhelpers-countries.js"></script> -->
+
 </head>
 
 <body>
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+            <!-- adding weather into the fixed nav-bar -->
+            <div id="weather" class="left">
+                <ul class="miniWeatherDisplayHide collapsible" data-collapsible="popout">
+                    <li>
+                        <div class="collapsible-header weatherIcon"><i class="material-icons">filter_drama</i>
+                        </div>
+                        <div class="collapsible-body weatherInfo">
+                            <div class="city"></div>
+                            <div class="temp"></div>
+                            <div class="wind"></div>
+                            <div class="humidity"></div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        
+
+            <a href="#!" class="center brand-logo">Valise</a>
+            <a href="#" class="right changeLink">Change Plans</a>  
+            </ul>
+          </div>
+        </nav>
+    </div>
 
     <div class="parallax-container">
         <div class="parallax"><img id="parallaxImageOne" src="assets/images/wallstreet.jpg"></div>
 
         <div id="headerTitle">
-            <h1>Valise</h1>
+            <h1>V</h1>
             <h4>Take us with you</h4>
         </div>
-
-        <!-- adding weather into the main content/header/parallax -->
-        <div id="weather">
-        <span class="city"></span>
-        <span class="wind"></span>
-        <br>
-        <span class="humidity"></span>
-        <br>
-        <span class="temp"></span>
-        </div>
-        
         <br>
         <br>
-
         <div>
             <span id="display"></span>
         </div>
@@ -98,23 +116,63 @@
 
 <div id="newsContainer">
     <span class="newsBox">
-        <h1>daily news</h1>
-        <button class="travelInfoButton hide">Change Travel Info</button>
+        <h4>daily news</h4>
+
     </span>
 </div>
+
+<!-- adding a newsBox carousel -->
+
+<!-- <div id="newsContainer">
+    <span class="newsBox carousel carousel-slider center" data-indicators="true">
+    <div class="carousel-fixed-item center">
+        <h1>daily news</h1>
+    </div>
+    <div class="carousel-item red white-text" href="#">
+        <p>first panel</p>
+    </div>
+    </span>
+</div> -->
+
+
+<!-- end of news carousel -->
+
 
 <div class="parallax-container travelPlans">
     <div class="parallax travelImage"><img src="assets/images/suitcaseWallpaper.jpg"></div>
     <div id="travelPlans">
-        <h3>Travel Plans</h3>
+        <h4>Travel Plans</h4>
+    </div>
+    <div class="row travelNotes">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12 flightNotes">
+          <textarea id="icon_prefix2" class="materialize-textarea" placeholder="Austin to Atlanta       Date: 7/16/2017      Time: 9:00am      Gate:A15 "></textarea>
+          <label>Flight Notes</label>
+        </div>
+      </div>
+    </form>
+    <br>
+    <br>
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s6 lodgingNotes">
+              <textarea id="icon_prefix2" class="materialize-textarea" placeholder="Air b and b     Date: 7/18/2017 - 7/20/2017"></textarea>
+              <label>Lodging Notes</label>
+            </div>
+            <div class="input-field col s6 localTransportation">
+              <textarea id="icon_prefix2" class="materialize-textarea" placeholder="Metro-Rail from Atlanta to Brookhaven   Time: 3:00pm    Date: 7/20/2017 "></textarea>
+              <label>Local Transportation Notes</label>
+            </div>
+        </div>
+    </form>
     </div>
 </div>
 
 
 
-
-<div class="addingTravelInfoContainer">
-    <!-- removing navBar atm... -->
+ <!-- <div class="addingTravelInfoContainer">
+    removing navBar atm... -->
     <!-- <div class="navBar">class="navBar"</div> -->
 
     <!--  the form to add travel info that will be placed on the landing page
@@ -157,11 +215,11 @@
     </div> -->
 </div>
    <script type="text/javascript" src="assets/js/app.js"></script>
-    <script type="text/javascript" src="assets/js/newsApp.js"></script>
     <script type="text/javascript" src="assets/js/todoListAnimations.js"></script>
     <script type="text/javascript" src="assets/js/auth.js"></script>
     <script type="text/javascript" src="assets/js/backend.js"></script>
-    <script type="text/javascript" src="assets/js/testFB.js"></script>
+     <script type="text/javascript" src="assets/js/testFB.js"></script>
+    <script type="text/javascript" src="assets/js/countdown.js"></script>
 
 </body>
 

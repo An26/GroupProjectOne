@@ -1,8 +1,8 @@
-
+//
 var valiseUser = null;
-var loginUser = null;
+//var loginUser = null;
 var toDoList = {list: []};
-
+//<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 function User(name, city, country, date) {
 	this.name = name;
 	this.city = city;
@@ -13,7 +13,7 @@ function User(name, city, country, date) {
 // Initialize Firebase
 
 function initializeFireBase () {
-	var config = {
+	 var config = {
     	apiKey: "AIzaSyCxOHLv_eX3M4kSkbVwxXbNjcmtlwen6Mc",
    		authDomain: "valise-e4cc8.firebaseapp.com",
     	databaseURL: "https://valise-e4cc8.firebaseio.com",
@@ -28,17 +28,38 @@ function getRef(endpoint) {
 	if (endpoint == '') {
 		ref = firebase.database().ref();
 	} else {
-		ref = firebase.database().ref(endpoint);
+		ref = firebase.database().ref('/' + endpoint + '/' + getCurrentUserUID());
 	}
 	return ref;
 }
-function addFBListenter(endpoint, action, fn) {
+function addFBListenter(endpoint) {
 	var ref = getRef(endpoint);
-	ref.on(action, fn);
+	if (endpoint == 'user') {
+		ref.on('value', getUserValue);
+	} else if (endpoint == 'toDoList') {
+		ref.on('value', getToDoListValue);
+	} else {
+		// something very wrong
+		console.error('addFBListenter: Incorrect endpoint: ' + endpoint);
+	}
+
 }
-function removeFBListener(endpoint, action, fn) {
+function removeFBListener(endpoint) {
 	var ref = getRef(endpoint);
-	ref.off(action, fn);
+	if (endpoint == 'user') {
+		ref.off('value', getUserValue);
+	} else if (endpoint == 'toDoList') {
+		ref.off('value', getToDoListValue);
+	} else {
+		// something very wrong
+		console.error('removeFBListenter: Incorrect endpoint: ' + endpoint);
+	}
+}
+function removeFBListeners() {
+	var uid = firebase.auth().currentUser.uid;
+	console.log('uid: ' + uid);
+	removeFBListener('user'); 
+	removeFBListener('toDoList');
 }
 // Firebase Listeners
 function getUserValue(snapshot) {
@@ -48,25 +69,22 @@ function getUserValue(snapshot) {
 	if (snapshot.val() == null) return;
 
 	console.log('snapshot.key: ' + snapshot.key);
-
+	console.log(snapshot.val());
 	setValiseUser(snapshot.val());
 	// Update UI
 	updateUIGetUserValue(getValiseUser());
  
 }
-
-/*
 function getToDoListValue(snapshot) {
 	console.log('getToDoListValue');
 	if (snapshot.val() == null) return;
 	console.log('snapshot.key: ' + snapshot.key);
 	console.log(snapshot.val());
 	toDoList = snapshot.val();
-	updateUIGetToDoListValue(getValiseToDoList());
+	updateUIGetToDoListValue(toDoList.list);
 }
 
 // Helper Function, e.g. called by click Listeners
-
 function getValiseUser() {
 	return Object.assign({}, valiseUser);
 }
@@ -86,12 +104,10 @@ function getValiseToDoList() {
 	return toDoList.list;
 }
 function setUser(userObj) {
-
-	firebase.database().ref('/user/' + loginUser.uid).set(userObj);
+	var uid = getCurrentUserUID();
+	firebase.database().ref('/user/' + uid).set(userObj);
 }
 function setFBList() {
-	firebase.database().ref('/toDoList/' + loginUser.uid).set(toDoList);
+	var uid = getCurrentUserUID();
+	firebase.database().ref('/toDoList/' + uid).set(toDoList);
 }
-
-
-*/

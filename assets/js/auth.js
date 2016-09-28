@@ -1,26 +1,32 @@
+var localCredKey = 'valiseCurrentUser';
+var currentUserUID = null;
 
+function getCurrentUserUID () {
+    return currentUserUID;
+}
 function signIn(email, password) {
-	firebase
+
+    firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then(function(user){
-        var uid = user.uid;
-        console.log(uid);
+        //var uid = user.uid;
+        //console.log(uid);
         //loginUser = user;
         loginSuccess(user);
     })
     .catch(function(err){
-        console.error(err);
+        //console.error(err);
         updateUIAuthErr(createErr(err));
     });
 }
 function signUp(email, password) {
-	firebase
+    firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then(function(user){
-        var uid = user.uid;
-        console.log(uid);
+        //var uid = user.uid;
+        //console.log(uid);
         //loginUser = user;
         loginSuccess(user);
     })
@@ -37,26 +43,31 @@ function signOut() {
     .then(function(){
         logOutSuccess();
     }, function(err){
-        console.error(err);
+        //console.error(err);
         updateUIAuthErr(createErr(err));
     });    
 }
 function loginSuccess(user) {
     console.log('loginSuccess');
-    loginUser = user;
-    // update UI
-    updateUILogInSucess();
-    //==========
-    // Trigger initial load
-    addFBListenter('/user/' + loginUser.uid, 'value', getUserValue);
-    addFBListenter('/toDoList/' + loginUser.uid, 'value', getToDoListValue);
+    //console.log('uid: ' + user.uid);
+    //console.log('Anonymous: ' + user.isAnonymous);
+    //console.log('email: ' + user.email);
 
+    localStorage.setItem(localCredKey, user.uid);
+    currentUserUID = user.uid;
+    updateUILogInSucess();
+    // Trigger initial load
+    addFBListenter('user');
 }
+
 function logOutSuccess() {
-    loginUser = null;
+    //loginUser = null;
     valiseUser = null;
     toDoList = { list: []};
-    updateUILogOutSucess();
+    currentUserUID = null;
+
+    localStorage.removeItem(localCredKey);
+    updateUILogOutSucess();  
 }
 function createErr(err) {
     var msg = err.message;
@@ -67,4 +78,32 @@ function createErr(err) {
         code: err.code,
         message: msg
     };
+}
+//======================
+
+function reLogin (morePage) {
+    var uid = localStorage.getItem(localCredKey);
+    if (uid) {
+        currentUserUID = uid;
+        anonymousSignIn(morePage, uid);
+    } else {
+        updateUIAuthErr({code: 'missing-uid', message: 'missing current user uid in local storage'});
+    }
+}
+function anonymousSignIn(morePage, uid) {
+    firebase
+    .auth()
+    .signInAnonymously()
+    .then(function(user){
+        updateUILogInSucess();
+        // Trigger initial load.
+        addFBListenter('user'); 
+        addFBListenter('toDoList');
+        if (morePage) {
+            // if we need to do more
+        }
+    })
+    .catch(function(error) {
+        updateUIAuthErr(createErr(err));
+    });
 }
