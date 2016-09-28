@@ -13,10 +13,13 @@
     <!-- <link rel="stylesheet" href="assets/BootstrapFormHelpers/dist/css/bootstrap-formhelpers.css">
     -->
     <!-- google font -->
-    <link href="https://fonts.googleapis.com/css?family=Gravitas+One|Playfair+Display" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display|Playfair+Display+SC" rel="stylesheet">
 
     <!-- Our local style Sheet -->
     <link rel="stylesheet" type="text/css" href="assets/css/styleTwo.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 
@@ -48,9 +51,11 @@
             <div id="weather" class="left">
                 <ul class="miniWeatherDisplayHide collapsible" data-collapsible="popout">
                     <li>
-                        <div class="collapsible-header weatherIcon"><i class="material-icons">filter_drama</i>
+
+                        <div class="collapsible-header">Daily Weather<i class="material-icons"></i>
                         </div>
                         <div class="collapsible-body weatherInfo">
+                            <div class="weatherIcon"></div>
                             <div class="city"></div>
                             <div class="temp"></div>
                             <div class="wind"></div>
@@ -63,7 +68,7 @@
         
 
             <a href="#!" class="center brand-logo">Valise</a>
-            <a href="#" class="right changeLink">Change Plans</a>  
+            <a href="#" class="right logOut">Log Out</a>  
             </ul>
           </div>
         </nav>
@@ -73,6 +78,7 @@
         <div class="parallax"><img id="parallaxImageOne" src="assets/images/valiseWallpaper.jpg"></div>
 
         <div id="headerTitle">
+            <br>
             <h1>V</h1>
             <h4>Take us with you</h4>
         </div>
@@ -114,7 +120,7 @@
 
 <div id="newsContainer">
     <span class="newsBox">
-        <h4>daily news</h4>
+        <h4>Daily News</h4>
 
     </span>
 </div>

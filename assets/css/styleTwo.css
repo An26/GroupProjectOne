@@ -1,32 +1,40 @@
 body {
 	/*background-color: #FCFFF0;*/
 	text-align: center;
-	font-family: 'Playfair Display', serif;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 
 /*---------------nav bar--------------*/
 
 nav .nav-wrapper {
-	background: white;
-	border-bottom: 5px solid black;
+	background: #660000;
+	/*border-bottom: 5px solid black;*/
 	color: #660000;
-	height: 90px;
+	height: 70px;
+
 }
 
 .nav-wrapper .brand-logo{
 	color: #660000;
 	font-size: 40px;
 	margin-top: 10px;
+	-webkit-text-fill-color: #FFF;
+	text-shadow: 0 0 22px black, 0 0 22px black; 
+
+	font-family: 'Playfair Display SC', serif;
 }
 
-.changeLink {
+.logOut {
 	color: #660000;
 	margin-right: 20px;
 	font-size: 20px;
-	margin-top: 12px;
+	margin-top: 31px;
+
+	-webkit-text-fill-color: #FFF;
+	text-shadow: 0 0 22px black, 0 0 22px black;
 }
 
-/*--------------parallax main display-------------------------*/
+/*--------------- main display-------------------------*/
 
 .parallaxContainerTop, #mainContent, #miscContainer, #newsContainer {
 	border: 5px solid #black;
@@ -40,7 +48,7 @@ nav .nav-wrapper {
 
 .parallax img {
 	background: black;
-	opacity: 0.5;
+	opacity: 0.6;
 	
 }
 
@@ -54,13 +62,18 @@ nav .nav-wrapper {
 	color: black;
 	text-align: center;
 
-	color: #660000;
+/*	color: #660000;
     text-shadow: #000 0px 0px 1px;
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;*/
 }
 
 #headerTitle h1 {
 	font-size: 80px;
+}
+
+#headerTitle h4 {
+	font-size: 30px;
+	margin-top: 40px;
 }
 
 
@@ -100,16 +113,30 @@ nav .nav-wrapper {
 }
 
 .weatherIcon{
-	margin-top: -10px;
+	/*margin-top: -10px;*/
 
 }
 
-.weatherInfo {
-	color:white;
+.weatherInfo div {
+	color: black;
 	font-weight: bold;
+	margin: 0px !important;
+/*	margin-top: 50px;*/
+
 }
 
+div .collapsible-header {
+	margin-top: -1px !important;
+	margin-left: -35px !important;
+	padding: 7px;
+	font-size: 20px;
+	-webkit-text-fill-color: #FFF;
+	text-shadow: 0 0 22px black, 0 0 22px black;
+	background: #660000;
+	border: none !important;
+}
 
+/*-----------input form display----moved to the landing page-------------*/
 
 #travelCountry{
 	background-color: none;
@@ -151,11 +178,21 @@ nav .nav-wrapper {
 	float: left;
 }
 
+/*-------------news box---------------------------*/
+
 .newsBox .article {
 	text-align: center;
 	width: 30%;
 	/*height: auto;*/
 	display: inline-block;
+	padding: 10px;
+	margin: 10px;
+
+
+}
+
+.urlTitle {
+	margin-bottom: 10px;
 }
 
 .newsBox {
@@ -163,6 +200,14 @@ nav .nav-wrapper {
 	width: 100%;
  
 }
+
+.newsBox h4 {
+	font-family: 'Playfair Display SC', serif;
+	font-size: 40px;
+	width: 100%;
+}
+
+/*---------------to do box---------------*/
 
 #todoItemBox {
 	background-color: red;
@@ -177,6 +222,8 @@ nav .nav-wrapper {
 	text-align: center;
 }
 
+/*------------------travel plans portion-----------------*/
+
 .travelImage img {
 	max-width: 1700px;
 	max-height: 1400px;
@@ -187,16 +234,21 @@ nav .nav-wrapper {
 	overflow: all;
 }
 
+.travelPlans h4 {
+	font-family: 'Playfair Display SC', serif;
+	font-size: 40px;
+}
+
 .flightNotes label, .lodgingNotes label, .localTransportation label{
-	color: white;
-	color: white;
-    text-shadow: #000 0px 0px 1px;
-    -webkit-font-smoothing: antialiased;
+	color: black;
+/*    text-shadow: #000 0px 0px 1px;
+    -webkit-font-smoothing: antialiased;*/
 	font-size: 25px;
 }
 
 .input-field label.active {
 	font-size: medium !important;
+	margin-top: -15px;
 }
 
 textarea.materialize-textarea {
