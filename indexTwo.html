@@ -44,49 +44,39 @@
 
 <body>
 
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-            <!-- adding weather into the fixed nav-bar -->
-            <div id="weather" class="left">
-                <ul class="miniWeatherDisplayHide collapsible" data-collapsible="popout">
-                    <li>
-
-                        <div class="collapsible-header">Daily Weather<i class="material-icons"></i>
-                        </div>
-                        <div class="collapsible-body weatherInfo">
-                            <div class="weatherIcon"></div>
-                            <div class="city"></div>
-                            <div class="temp"></div>
-                            <div class="wind"></div>
-                            <div class="humidity"></div>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
-        
-
-            <a href="#!" class="center brand-logo">Valise</a>
-            <a href="#" class="right logOut">Log Out</a>  
-            </ul>
-          </div>
-        </nav>
-    </div>
-
     <div class="parallax-container">
+
+        <div id='navBarTop'>
+            <div class="navBar">
+                <div><p><i class="headerTitle">Valise</i></p></div>
+                <div><p><a href="#" class="right logOut">Log Out</a></p></div>
+            </div>
+
+            
+        </div>
+        <div id="weather" class="left">
+            <ul class="miniWeatherDisplayHide collapsible" data-collapsible="mdi-maps-place">
+                <li>
+                    <div class="collapsible-header">Daily Weather<i class="mdi-maps-place"></i>
+                    </div>
+                    <div class="collapsible-body weatherInfo">
+                        <div class="weatherIcon"></div>
+                        <div class="city"></div>
+                        <div class="temp"></div>
+                        <div class="wind"></div>
+                        <div class="humidity"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
         <div class="parallax"><img id="parallaxImageOne" src="assets/images/valiseWallpaper.jpg"></div>
 
-        <div id="headerTitle">
-            <br>
-            <h1>V</h1>
-            <h4>Take us with you</h4>
-        </div>
-        <br>
-        <br>
-        <div>
+<!--    <div class="countdownDisplay">
             <span id="display"></span>
-        </div>
+        </div> -->
+        <br>
         <br>
 
         <div id="todoItemBox">
@@ -124,23 +114,6 @@
 
     </span>
 </div>
-
-<!-- adding a newsBox carousel -->
-
-<!-- <div id="newsContainer">
-    <span class="newsBox carousel carousel-slider center" data-indicators="true">
-    <div class="carousel-fixed-item center">
-        <h1>daily news</h1>
-    </div>
-    <div class="carousel-item red white-text" href="#">
-        <p>first panel</p>
-    </div>
-    </span>
-</div> -->
-
-
-<!-- end of news carousel -->
-
 
 <div class="parallax-container travelPlans">
     <div class="parallax travelImage"><img src="assets/images/suitcaseWallpaper.jpg"></div>

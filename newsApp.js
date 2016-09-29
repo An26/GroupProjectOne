@@ -3,7 +3,7 @@
 function newsAPI() {
 
 	var countrySearch = "india";
-	//var APIKey	= "b590022778624bc6b7386999057a30ac";
+	//var APIKey	= "45af58c725b840eba04e6b3d1594f45d";
 
 	var queryURL = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + countrySearch + "&count=10&offset=0&mkt=en-us&safeSearch=Moderate";
 
