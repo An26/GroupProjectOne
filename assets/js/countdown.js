@@ -1,3 +1,12 @@
+
+function updateUIGetUserValue(userObj) {
+  // userObj is retrieved from Firebase at this point of time
+  weatherAPI(userObj);
+  newsAPI(userObj);
+  var myCountdownInterval = setInterval(myCountdown, 1000);
+
+}
+
 $(document).ready(readyFn);
 
 
@@ -16,7 +25,7 @@ function readyFn() {
 
 }
 
-    var user =  getValiseUser();
+function weatherApi(user) {
     
     console.log(user);
     var travelCity = user.city; 
@@ -57,20 +66,17 @@ function readyFn() {
               console.log("Wind Speed: " + response.wind.speed);
               console.log("Humidity: " + response.main.humidity);
               console.log("Temperature (F): " + response.main.temp);
-
-              // Initialize User object
-            var user = new User(userName, travelCity, travelCountry, travelDate);
-
-              setUser(user);
+ 
               return false
 
-})
+})};
 
-          //Countdown function to find the difference between the current date and the travel date 
+//Countdown function to find the difference between the current date and the travel date 
 
-          function myCountdown() {
+function myCountdown() {
 
-
+              var user = getValiseUser();
+              var travelDate = user.date;
               // var travelDate = '11232016';
 
               var formatTravelDate = moment(travelDate, 'YYYY-MM-DD');
@@ -106,10 +112,8 @@ function readyFn() {
 
               $("#display").html(diffInTimeFromNow);
 
-
-          }
+}
           //Placing the countdown function in an interval that causes it to run every one second 
-          var myCountdownInterval = setInterval(myCountdown, 1000);
           //$('#arrivalDate').val("");
           //$('#userName').val("");
           //$('#f_elem_city').val("");
@@ -129,9 +133,9 @@ function readyFn() {
 
 // --------GOOGLE NEWS API-------------An Huynh-------------
 
-function newsAPI() {
+function newsAPI(user) {
 
-  var countrySearch = travelCountry;
+  var countrySearch = user.country;
   //var APIKey  = "b590022778624bc6b7386999057a30ac";
 
   var queryURL = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + countrySearch + "&count=10&offset=0&mkt=en-us&safeSearch=Moderate";
@@ -168,6 +172,4 @@ $.ajax({
 
 }
 
-
-newsAPI();
   
