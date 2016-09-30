@@ -14,7 +14,6 @@
 
 //pushing up new to-do on the form/list
 
-$(document).ready(function() {
 
     var toDoCount = 0;
 
@@ -88,7 +87,7 @@ $(document).ready(function() {
     });
 
 
-});
+
 
 
 	function removeTask(){

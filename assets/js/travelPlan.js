@@ -25,9 +25,9 @@ function addListener(sel, eve, fn) {
 	$(document).on(eve, sel, fn);
 }
 
-$(document).ready(readyFn);
+//$(document).ready(readyFn);
 
-function readyFn() {
+/*function readyFn() {
 	console.log('travel_plan');
 	initializeFireBase();
 	// Hard coded for testing purpose
@@ -38,3 +38,5 @@ function readyFn() {
 	addLodgingListeners();
 	addItineraryListeners();
 }
+
+*/

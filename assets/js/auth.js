@@ -98,7 +98,10 @@ function anonymousSignIn(morePage, uid) {
         updateUILogInSucess();
         // Trigger initial load.
         addFBListenter('user'); 
-        addFBListenter('toDoList');
+        //addFBListenter('toDoList');
+        addTravelPlanFBListenters('flight');
+        addTravelPlanFBListenters('lodging');
+        addTravelPlanFBListenters('itinerary');
         if (morePage) {
             // if we need to do more
         }

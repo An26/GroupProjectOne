@@ -18,19 +18,31 @@ function updateUIAuthErr(err) {
     console.log(err);
 };
 
+function clickSignOutBtn() {
+ signOut();
+ location.href = "landingPage.html";
+}
+
 
 $(document).ready(readyFn);
 
 
 
-
 function readyFn() {
+
+$('.parallax').parallax();
+
   console.log('Test Backend toDoList');
 
   initializeFireBase(); //***
   reLogin(true); //***
 
-  //addListener('#signOutBtn', 'click', clickSignOutBtn);
+
+  addListener('#signOutBtn', 'click', clickSignOutBtn);
+
+  addFlightListeners();
+  addLodgingListeners();
+  addItineraryListeners();
 
   //addListener('#addToDoList', 'click', clickAddToDoList);
   //addListener('.editItem', 'click', clickEditItem);
