@@ -14,7 +14,7 @@ $.ajax({
 	url: queryURL, 
 	beforeSend: function(info){
             // Request headers -- copied from the website
-            info.setRequestHeader("Ocp-Apim-Subscription-Key","f7a5f4560c984fe3b4534359f7b5a1bf");
+            info.setRequestHeader("Ocp-Apim-Subscription-Key","06ba1169d8414cc5b5af23f9147631f9");
         },
 		method: 'GET'
 	})

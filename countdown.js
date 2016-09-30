@@ -40,7 +40,7 @@ function myCountdown() {
     var seconds = seconds - (days*24*60*60 + hours*60*60 + minutes*60); 
   
  
-    var diffInTimeFromNow ="Countdown To Travel: " + days + " " + "Days" + " : " + hours + " " + "Hours " + ": " + minutes + " " + "Minutes " + ": " + seconds + " " + "Seconds";
+    var diffInTimeFromNow = days + " " + "Days" + " : " + hours + " " + "Hours " + ": " + minutes + " " + "Minutes " + ": " + seconds + " " + "Seconds";
 
     console.log(diffInTimeFromNow);
 
