@@ -4,26 +4,6 @@ body {
 	font-family: 'Playfair Display', serif !important;
 }
 
-}
-
-/*---------------nav bar--------------*/
-
-#navBarTop{
-	position: fixed !important;
-	width: 100%;
-	height: 70px;
-	z-index: 200!important;
-}
-
-.navBar {
-	background-image: none;
-	background-color: black !important;
-	opacity: 0.8;
-	color: white;
-	font-weight: bold;
-	height: 70px;
-}
-
 
 /*---------------countdown display----------*/
 
@@ -52,53 +32,6 @@ body {
 }
 
 
-.headerTitle{
-
-  
-  font-weight: bold;
-  font-family: 'Playfair Display SC', serif !important;
-  opacity: 0.8;
-
-  	margin-top: 120px;
-	background-color: none;
-	border-style: none;
-	font-size: 50px;
-	text-align: center;
-	-webkit-text-fill-color: #FFF;
-	text-shadow: 0 0 22px black, 0 0 22px black; 
-
-
-}
-
-.logOut {
-	font-family: 'Playfair Display', serif !important;
-	background-color: #660000;
-	background-image: none !important;
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -webkit-appearance: button;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    box-sizing: border-box;
-	color: white !important;
-	margin-right: 92px;
-	margin-top: -35px;
-	text-transform: none;
-    
-	position: fixed;
-	right: 0;
-	font-weight: normal;
-}
 
 /*--------------- main/top display-------------------------*/
 
@@ -137,63 +70,6 @@ body {
 	display: none;
 }
 
-/*-----------------------weather display-------------------*/
-
-#weather {
-/*	position: absolute;
-	top: 5px;
-	left: 10px;
-	z-index: 100;*/
-	/*height: 190px !important;
-	width: 290px !important;*/
-
-	/*----adding changes to the weather display - an ---------------*/
-	/*line-height: 130%;*/
-	z-index: 99;
-	position: fixed;
-	background: transparent;
-}
-
-.weatherIcon{
-	/*margin-top: -10px;*/
-
-}
-
-.miniWeatherDisplayHide{
-	border: none;
-}
-
-.weatherInfo{
-	border: none;
-}
-
-.weatherInfo div {
-	color: white !important;
-	font-family: 'Playfair Display', serif !important;
-	font-weight: bold;
-	margin: 0px !important;
-/*	margin-top: 50px;*/
-
-}
-
-div .collapsible-header {
-	margin-top: -74px !important;
-	margin-left: -10px !important;
-	padding: 8px;
-	font-size: 20px;
-	-webkit-text-fill-color: #FFF;
-	text-shadow: 0 0 22px black, 0 0 22px black;
-	background: transparent;
-	border: none !important;
-	font-family: 'Playfair Display', serif !important;
-}
-
-.collapsible-body{
-
-	background-image: url("../images/vector.jpg");
-	opacity: 0.7;
-	font-family: 'Playfair Display', serif !important;
-}
 
 /*-----------input form display----moved to the landing page-------------*/
 
@@ -240,7 +116,7 @@ div .collapsible-header {
 /*-------------news box---------------------------*/
 
 #newsContainer{
-	background: #faf7f3;
+	background: #EBE8E7;
 }
 
 .newsBox .article {
@@ -251,7 +127,7 @@ div .collapsible-header {
 	padding: 10px;
 	margin: 10px;
 	border: 2px solid black;
-	background: #faf7f3;
+	background: #EBE8E7;
 }
 
 .urlTitle {
@@ -262,7 +138,7 @@ div .collapsible-header {
 .newsBox {
 	height: 500px;
 	width: 100%;
-	background: #faf7f3;
+	background: #EBE8E7;
 }
 
 .newsBox h4 {
@@ -420,7 +296,6 @@ textarea.materialize-textarea {
 
 
 button{
-	
 	margin-top: -3px;
 	float: left;
 	float: right;
@@ -456,6 +331,142 @@ button{
 	font-weight: bold;
 	opacity: 0.75;
 
+}
+
+/*-------navBar moved---------------*/
+
+#navBarTop{
+	position: fixed !important;
+	width: 100%;
+	height: 70px;
+	z-index: 200!important;
+}
+
+.navBar {
+	background-image: none;
+	background-color: black !important;
+	opacity: 0.8;
+	color: white;
+	font-weight: bold;
+	height: 70px;
+}
+
+
+.headerTitle{
+	color: white;
+	font-size: 40px;
+	font-family: 'Playfair Display SC', serif;
+
+	z-index: 99;
+	position: fixed;
+	text-align: center;
+	/*top: 0;*/
+	background: transparent;
+	font-weight: normal;
+
+
+
+/*  
+  font-weight: bold;
+  font-family: 'Playfair Display SC', serif !important;
+  opacity: 0.8;
+
+  	margin-top: 120px;
+	background-color: none;
+	border-style: none;
+	font-size: 50px;
+	text-align: center;
+	-webkit-text-fill-color: #FFF;
+	text-shadow: 0 0 22px black, 0 0 22px black; 
+*/
+
+}
+
+.logOut {
+	font-family: 'Playfair Display', serif !important;
+	background-color: #660000;
+	background-image: none !important;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -webkit-appearance: button;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+	color: white !important;
+	margin-right: 92px;
+	margin-top: 19px;
+	text-transform: none;
+	position: absolute;
+	right: 0;
+	font-weight: normal;
+	z-index: 300 !important;
+}
+
+/*-----------------------weather display-------------------*/
+
+#weather {
+/*	position: absolute;
+	top: 5px;
+	left: 10px;
+	z-index: 100;*/
+	/*height: 190px !important;
+	width: 290px !important;*/
+
+	/*----adding changes to the weather display - an ---------------*/
+	/*line-height: 130%;*/
+	z-index: 99;
+	position: fixed;
+	background: transparent;
+}
+
+.weatherIcon{
+	/*margin-top: -10px;*/
+
+}
+
+.miniWeatherDisplayHide{
+	border: none;
+}
+
+.weatherInfo{
+	border: none;
+}
+
+.weatherInfo div {
+	color: white !important;
+	font-family: 'Playfair Display', serif !important;
+	font-weight: bold;
+	margin: 0px !important;
+/*	margin-top: 50px;*/
+
+}
+
+div .collapsible-header {
+	margin-top: -74px !important;
+	margin-left: -10px !important;
+	padding: 8px;
+	font-size: 20px;
+	-webkit-text-fill-color: #FFF;
+	text-shadow: 0 0 22px black, 0 0 22px black;
+	background: transparent;
+	border: none !important;
+	font-family: 'Playfair Display', serif !important;
+}
+
+.collapsible-body{
+	background-image: url("../images/vector.jpg");
+	opacity: 0.7;
+	font-family: 'Playfair Display', serif !important;
 }
 
 
