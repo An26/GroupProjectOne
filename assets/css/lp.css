@@ -268,7 +268,7 @@ p{
 
   font-size: 15px;
   text-align: center;
-  -webkit-text-fill-color: #9E8871;
+  -webkit-text-fill-color: #fff;
   text-shadow: 0 0 35px #660000 , 0 0 30px #660000;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -278,9 +278,8 @@ p{
 #userMsgText{
 
 
-
   text-align: center !important; 
-  -webkit-text-fill-color: #9E8871 !important;
+  -webkit-text-fill-color: #fff !important;
   text-shadow: 0 0 35px #660000 , 0 0 30px #660000 !important; 
   margin-bottom: 15px !important;
 
@@ -290,7 +289,7 @@ p{
 #userMsgText2{
 
   text-align: center !important; 
-  -webkit-text-fill-color: #9E8871 !important;
+  -webkit-text-fill-color: #fff !important;
   text-shadow: 0 0 35px #660000 , 0 0 30px #660000 !important; 
   margin-bottom: 15px !important;
 
@@ -298,11 +297,11 @@ p{
 }
 
 #valiseText{
-
   font-size: 50px;
   text-align: center;
-  -webkit-text-fill-color: #9E8871;
-  text-shadow: 0 0 35px #660000 , 0 0 30px #660000; 
+/*  -webkit-text-fill-color: #fff;
+  text-shadow: 0 0 35px #660000 , 0 0 30px #660000; */
+  font-family: 'Playfair Display SC', serif;
 }
 
 #shiftRight{
@@ -317,10 +316,10 @@ p{
 .btn{
   background-color: #660000 !important;
   background-image: none !important;
+  margin-right: -100px;
 }
 
 .button1{
-
   margin-top: 25px;
 }
 
@@ -345,31 +344,36 @@ h3 span{
 }
 
 .signUp{
-
    z-index: 100;
    color: white; 
    font: bold 15px/15px 'Playfair Display', serif; 
-   letter-spacing: -1px;
+   /*letter-spacing: -1px;*/
    background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.7);  
    position: absolute;
-   margin-top: 32px;
-   margin-left: -13px;
-   margin-top: 160px;
+/*   margin-top: 32px;
+   margin-left: -13px;*/
+   margin-top: 200px;
    margin-bottom: 40px;
-   padding: 70px;
-
+   padding: 50px;
 }
 
 
 
 #text{
 
-  font-size: 58px;
-   -webkit-text-fill-color: #9E8871;
-    text-shadow: 0 0 35px #000 , 0 0 30px #000; 
-}
+  font-size: 45px;
+  /*text-align: center;*/
+  -webkit-text-fill-color: #fff;
+  text-shadow: 0 0 35px #660000 , 0 0 30px #660000; 
+  font-weight: bold;
+  font-family: 'Playfair Display SC', serif;
 
+/*  font-size: 50px;
+  -webkit-text-fill-color: #fff;
+  text-shadow: 0 0 35px #fff , 0 0 30px #000;
+  font-family: 'Playfair Display SC', serif; */ 
+}
 
 
 
