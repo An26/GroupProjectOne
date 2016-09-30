@@ -53,7 +53,7 @@ body {
 .parallaxContainerTop, #mainContent, #miscContainer, #newsContainer {
 	border: 5px solid #black;
 	padding: 20px;
-	margin: 10px;
+	/*margin: 10px;*/
 }
 
 .parallax-container {
@@ -219,6 +219,10 @@ div .collapsible-header {
 
 /*-------------news box---------------------------*/
 
+#newsContainer{
+	background: #EBE8E7;
+}
+
 .newsBox .article {
 	text-align: center;
 	width: 30%;
@@ -226,10 +230,8 @@ div .collapsible-header {
 	display: inline-block;
 	padding: 10px;
 	margin: 10px;
-
 	border: 2px solid black;
-
-
+	background: #EBE8E7;
 }
 
 .urlTitle {
@@ -240,7 +242,7 @@ div .collapsible-header {
 .newsBox {
 	height: 500px;
 	width: 100%;
- 
+	background: #EBE8E7;
 }
 
 .newsBox h4 {
