@@ -152,7 +152,7 @@
 
 #fadeImages {
   position:relative;
-  margin:0;
+  margin:-15px;
   padding:0;
 }
 #fadeImages img {
@@ -161,6 +161,10 @@
   height: 135%;
   left:0;
 }
+
+
+
+
 
 #fadeImages img {
   -webkit-animation-name: imgFadeInOut;
@@ -374,6 +378,7 @@ h3 span{
   text-shadow: 0 0 35px #fff , 0 0 30px #000;
   font-family: 'Playfair Display SC', serif; */ 
 }
+
 
 
 

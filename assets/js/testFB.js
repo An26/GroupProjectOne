@@ -155,7 +155,7 @@ function clickSubmitBtn() {
     console.log("I've been clicked");
     travelDate = $('#dateInput').val();
     userName = $('#nameInput').val().trim();
-    travelCountry = $('#travelCountry').data('country');
+    travelCountry = $('#travelCountry').children('input').attr('value');
 
     var travelCity = $('#f_elem_city').val().trim();
     console.log("travel date is: " + travelDate);

@@ -177,7 +177,7 @@ function myCountdown() {
 
 function newsAPI(user) {
 
-  var countrySearch = user.country;
+  var countrySearch = user.city;
   //var APIKey  = "b590022778624bc6b7386999057a30ac";
 
   var queryURL = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + countrySearch + "&count=10&offset=0&mkt=en-us&safeSearch=Moderate";
