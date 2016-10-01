@@ -106,7 +106,7 @@ function anonymousSignIn(morePage, uid) {
             // if we need to do more
         }
     })
-    .catch(function(error) {
+    .catch(function(err) {
         updateUIAuthErr(createErr(err));
     });
 }
