@@ -17,7 +17,7 @@ function updateUIAuthErr(err) {
 };
 
 function updateUILogOutSucess() {
-  location.href = "landingPage.html";
+  location.href = "index.html";
 }
 
 

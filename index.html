@@ -3,269 +3,202 @@
 
 <head>
     <title>Valise</title>
+    <link rel="stylesheet" href="assets/css/lp.css">
 
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 
-    <!-- materialize css sheet -->
-    <link rel="stylesheet" type="text/css" href="assets/css/materialize.css">
+    <link rel="stylesheet" href="assets/BootstrapFormHelpers/dist/css/bootstrap-formhelpers.css">
 
-
-    <!-- google font -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-
+     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display|Playfair+Display+SC" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Our local style Sheet -->
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-    
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 
-     <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+
+
+    <script type="text/javascript" src="assets/BootstrapFormHelpers/dist/js/bootstrap-formhelpers.js"></script>
+    <script type="text/javascript" src="assets/BootstrapFormHelpers/js/bootstrap-formhelpers-selectbox.js"></script>
+    <script type="text/javascript" src="assets/BootstrapFormHelpers/js/lang/en_US/bootstrap-formhelpers-countries.en_US.js"></script>
+    <script type="text/javascript" src="assets/BootstrapFormHelpers/js/bootstrap-formhelpers-countries.js"></script>
 
     <!-- Added Moment JS -->
     <script src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
-
-    <!-- google APIs -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
-    <!-- Materialize: Compiled and minified JavaScript -->
-   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-    <!-- can't mix boostrap and materialize, comment out for now... -->
-<!--     <script type="text/javascript" src="assets/BootstrapFormHelpers/dist/js/bootstrap-formhelpers.js"></script>
-    <script type="text/javascript" src="assets/BootstrapFormHelpers/js/bootstrap-formhelpers-selectbox.js"></script>
-    <script type="text/javascript" src="assets/BootstrapFormHelpers/js/lang/en_US/bootstrap-formhelpers-countries.en_US.js"></script>
-    <script type="text/javascript" src="assets/BootstrapFormHelpers/js/bootstrap-formhelpers-countries.js"></script> -->
 
 </head>
 
 <body>
 
-    <div class="parallax-container">
 
-        <div id="navBarTop">
-            <div class="navBar">
-                <div><p><i class="headerTitle">Valise</i></p></div>
-                 <button type='button' class="right logOut" id='signOutBtn'><span class="glyphicon glyphicon-briefcase"></span>Log Out</button>
-            </div>
-
-            <div id="weather" class="left">
-            <ul class="miniWeatherDisplayHide collapsible" data-collapsible="mdi-maps-place">
-                <li>
-                    <div class="collapsible-header">Daily Weather<i class="mdi-maps-place"></i>
-                    </div>
-                    <div class="collapsible-body weatherInfo">
-                        <div class="weatherIcon"></div>
-                        <div class="city"></div>
-                        <div class="temp"></div>
-                        <div class="wind"></div>
-                        <div class="humidity"></div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        </div>
-
-
-
-
-        <div class="parallax"><img id="parallaxImageOne" src="assets/images/valiseWallpaper.jpg"></div>
-
-        <div id="todoItemBox">
-            <div id='todoList'>
-                <h5>To Do List:</h5>
-                <br>
-                <p id="toDoCount"></p>
-                <br>
-    
-                <div id="toDoForms">
-                    
-                </div>
-
-                
-            </div>
+    <div class="container-fluid">
+            <div class="header navbar navbar-fixed-top col-xs-12">
             <div class="row">
-                <div class="input-field">
-                    <input placeholder="add task" id="addTodo" type="text" class="addTodo">
-                    <!-- <label for="addingToTheList">add to do: </label> -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 marginTop brandName">
+                    <p id="valiseText">Valise</p>
+                    <p id="shiftRight">take us with you</p>
+                </div>
+                <!--    <div class="col-xs-2 col-sm-1 col-md-1 col-lg-1"></div> -->
+                <div class="loginInfoDiv">
+                    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="emailInput1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <!--       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                            </div>
+                    </div>
+                    </form>
+                    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2">
+                        <div class="form-group">
+                            <label for="passwordInput1">Password</label>
+                            <input type="password" class="form-control" id="passwordInput1" placeholder="Password">
+                        </div>
+                    </div>
+                    </form>
+                    <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 button1">
+                        <button type="button" class="btn" id="signInBtn">
+      <span class="glyphicon glyphicon-briefcase"></span> Log In
+      </button>
+                    </div>
                 </div>
             </div>
         </div>
 
-    </div>
 
-
-
-    <div class="countdownDisplay">
-        <p class="countdownText">Count down until your depature</p>
-        <span id="display"></span>
-    </div>
-
-
-<div id="newsContainer">
-    <span class="newsBox">
-        <h4>Daily News</h4>
-    </span>
-</div>
-
-
-    <div class="countdownDisplay">
-        <p class="travelPlansText" id="travelPlans"></p>
-        <span id="userCountry"></span>
-    </div>
-
-
-<div class="parallax-container travelPlans">
-    <div class="parallax travelImage"><img src="assets/images/brown-leather.jpg"></div>
-        <div class='row'>
-        <h4>Travel Itinerary</h4>
-        <br>
-    <div class='col s12 flightDiv'>
-        <table>
-        <label><h5 class="travelPlansHeading">Flight</h5></label><span id="flightErr" style="color: red"></span>
-        <br>
-        <thead>
-          <tr>
-              <th class="travelPlansCriteria" data-field="dCity">Departure City</th>
-              <th class="travelPlansCriteria" data-field="dTime">Departure Time</th>
-              <th class="travelPlansCriteria" data-field="aCity">Arrival City</th>
-              <th  class="travelPlansCriteria" data-field="aTime">Arrival Time</th>
-          </tr>
-        </thead>
-
-        <tbody id="flightBody">
-   
-          <tr id="flightInput">
-            <td><input  type="text" id="departureCity"></td>
-            <td><input type="datetime-local" id="departureTime"></td>
-            <td><input  type="text" id="arrivalCity"></td>
-            <td><input type="datetime-local" id="arrivalTime"></td>
-          </tr>
- 
-        </tbody>
-        </table>
-    </div>
-    </div>
-  <div class='row'>
-  <div class='col s12 lodgingDiv'>
-    <table>
-    <label><h5 class="travelPlansHeading">Lodging</h5></label><span id="lodgingErr" style="color: red"></span>
-    <br>
-        <thead>
-          <tr>
-              <th class="travelPlansCriteria" data-field="Name">Name</th>
-              <th class="travelPlansCriteria" data-field="Address">Address</th>
-              <th class="travelPlansCriteria" data-field="Beginning Time">Beginning Time</th>
-              <th class="travelPlansCriteria" data-field="End Time">End Time</th>
-          </tr>
-        </thead>
-
-        <tbody id="lodgingBody">
-   
-          <tr id="lodgingInput">
-            <td><input type="text" id="lodgingName"></td>
-            <td><input type="text" id="lodgingAddress"></td>
-            <td><input type="datetime-local" id="beginningTime"></td>
-            <td><input type="datetime-local" id="endTime"></td>
-          </tr>
- 
-        </tbody>
-        </table>
-    </div>
-  </div>
-     <div class='row'>
-  <div class='col s12 itineraryDiv'>
-    <table>
-    <label><h5 class="travelPlansHeading">Itinerary</h5></label><span id="itineraryErr" style="color: red"></span>
-    <br>
-        <thead>
-          <tr>
-              <th class="travelPlansCriteria" data-field="Date">Date</th>
-              <th  class="travelPlansCriteria" data-field="Time">Time</th>
-              <th class="travelPlansCriteria" data-field="Activity">Activity</th>
-              <th class="travelPlansCriteria" data-field="Fee">Fee</th>
-          </tr>
-        </thead>
-
-        <tbody id="itineraryBody">
-   
-          <tr id="itineraryInput">
-            <td><input type="date" id="itineraryDate"></td>
-            <td><input type="time" id="itineraryTime"></td>
-            <td><input type="text" id="activity"></td>
-            <td><input type="number" step="0.01" id="fee"></td>
-          </tr>
- 
-        </tbody>
-        </table>
-    </div>
-  </div>
-</div>
-
-
-
-
-<!-- <div class="addingTravelInfoContainer">
-    the form to add travel info that will be placed on the landing page
-    <div id="addTravelInfo">
-        <form class="travelInfo">
-            <h3>Add your Information: </h3>
-            <p>(IMPORTANT: all fields must be entered for submission to go through)</p>
-            <label>Name: </label>
-            <br>
-            <input type="addName" id="userName" name="userName" placeholder="Your Name Here">
-            <br>
-            <label>Country: </label>
-            <br>
-            <div id="travelCountry" class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
-                <input type="hidden" value="">
-                <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
-                    <span class="bfh-selectbox-option input-medium" data-option=""></span>
-                    <b class="caret"></b>
-                </a>
-                <div class="bfh-selectbox-options">
-                    <input type="text" class="bfh-selectbox-filter">
-                    <div role="listbox">
-                        <ul role="option">
-                        </ul>
+        <div class=imageNSignUp>
+            <div id="fadeImages">
+                <div class="col-xs-12 ">
+                    <div class="col-xs-4 ">
+                        <h3><span>V</span></h3>
                     </div>
+
+                    <div class="col-xs-2">
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 signUp">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h2 id="text">Sign Up</h2>
+                                <div id="msgForUser">
+                                    <h2 id="userMsgText">We're Excited About Your Next Trip!</h2>
+                                    <br>
+                                    <h2 id="userMsgText2">Click the main page button below to head to your dashboard</h2>
+                                    <br>
+                                    <button onclick="location.href = 'index.html'" type='submit' class='btn btn-primary' id='mainPageBtn'>Main Page</button>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 box" id="signInBox">
+
+                                <form>
+                                    <div class="form-group login">
+                                        <label for="emailInput">Email</label>
+                                        <input type="email" class="form-control" id="emailInput" placeholder="Enter Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordInput">Password</label>
+                                        <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" id="signUpBtn">Sign Up</button>
+                                </form>
+                                <div id="errMsg">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 box" id="infoBox">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="nameInput">Name</label>
+                                        <input type="text" class="form-control" id="nameInput" placeholder="Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <form action="" method="post" name="form_citydetails" id="form_citydetails" enctype="multipart/form-data" onsubmit="return false;">
+                                            <label for="cityInput">Destination City</label>
+                                            <br>
+                                            <input class="form-control" type="text" name="ff_nm_from[]" value="" id="f_elem_city" placeholder="Type City Name">
+                                        </form>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div id="travelCountry" class="bfh-selectbox bfh-countries form-group" data-country="US" data-flags="true">
+                                            <label for="countryInput">Country</label>
+                                            <br>
+                                            
+                                            <input class="form-control" type="hidden" value="">
+                                            
+                                            <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                                                <span class="bfh-selectbox-option input-medium" data-option=""></span>
+                                                <b class="caret"></b>
+                                            </a>
+                                            <div class="bfh-selectbox-options">
+                                                <input type="text" class="bfh-selectbox-filter form-control">
+                                                <div role="listbox">
+                                                    <ul role="option">
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="dateInput">Travel Date</label>
+                                        <input type="date" class="form-control" id="dateInput" placeholder="TravelDate">
+                                    </div>
+
+
+                                    <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <img src="assets/images/italyjpg.jpg" />
+                    <img src="assets/images/maldives2.jpg" />
+                    <img src="assets/images/sanFran.jpg" />
+                    <img src="assets/images/iceland.jpg" />
+                    <img src="assets/images/paris.jpg" />
+                    <img src="assets/images/scotland.jpg" />
+                    <img src="assets/images/beijing.jpg" />
+                    <img src="assets/images/venice.jpg" />
+                    <img src="assets/images/thailand.jpg" />
+                    <img src="assets/images/sidney_travel-t1.jpg" />
+
+
                 </div>
             </div>
-            <form action="" method="post" name="form_citydetails" id="form_citydetails" enctype="multipart/form-data" onsubmit="return false;">
-                <label>City:</label>
-                <br>
-                <input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city" placeholder="Type City Name">
-            </form>
-            <br>
-            <form action="provide travel date">
-                <strong><p>Arrival Date:</p></strong> <input type="date" name="arrivalDate" id="arrivalDate">
-            </form>
-        </form>
-        <br>
-        <button id="travelSubmit">Submit Info</button>
-    </div>
-</div> -->
 
 
-    <script type="text/javascript" src="assets/js/backendTravelPlan.js"></script>
+        </div>
+
+
+        <!--
+    
     <script type="text/javascript" src="assets/js/auth.js"></script>
     <script type="text/javascript" src="assets/js/backend.js"></script>
-    <script type="text/javascript" src="assets/js/itinerary.js"></script>
-    <script type="text/javascript" src="assets/js/lodging.js"></script>
-    <script type="text/javascript" src="assets/js/flight.js"></script>
-    <script type="text/javascript" src="assets/js/todoListAnimations.js"></script>
-    <script type="text/javascript" src="assets/js/countdown.js"></script>
+    <script type="text/javascript" src="assets/js/testFB.js"></script>
+    -->
+        <script type="text/javascript" src="assets/js/backend.js"></script>
+        <script type="text/javascript" src="assets/js/city.js"></script>
+        <script type="text/javascript" src="assets/js/auth.js"></script>
+        <script type="text/javascript" src="assets/js/testFB.js"></script>
+
+
+
+
 </body>
 
 </html>

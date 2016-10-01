@@ -74,7 +74,7 @@ function updateUILogInSucess() {
     if (isSignIn) {
         // show main button
 
-        location.href="index.html";
+        location.href="main.html";
 
     } else {
         showNextStep();
