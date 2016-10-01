@@ -13,12 +13,12 @@ function User(name, city, country, date) {
 // Initialize Firebase
 
 function initializeFireBase () {
-  var config = {
-    apiKey: "AIzaSyDVzXGvyebj5MWCX7UI_jJpQwSaRrCoaFo",
-    authDomain: "valise-new.firebaseapp.com",
-    databaseURL: "https://valise-new.firebaseio.com",
+   var config = {
+    apiKey: "AIzaSyAzp0E8md_beDyn3zNC3-jOEiVcQBuwEOg",
+    authDomain: "valise-wonder.firebaseapp.com",
+    databaseURL: "https://valise-wonder.firebaseio.com",
     storageBucket: "",
-    messagingSenderId: "922111312015"
+    messagingSenderId: "964994980671"
   };
   firebase.initializeApp(config);
 }
