@@ -46,7 +46,8 @@ body {
 
 .parallax img {
 	background: black;
-	
+	max-height: 1800px;
+	max-width: 1600px;
 	
 }
 
@@ -185,31 +186,97 @@ body {
 /*------------------travel plans portion-----------------*/
 
 .travelImage img {
-	max-width: 1700px;
-	max-height: 1400px;
-	opacity: 0.8;
+	max-width: 1900px;
+	max-height: 2500px;
+	opacity: 0.9;
 }
 
 .travelPlans{
-	height: 500px;
+	height: auto;
 	overflow: all;
 }
 
 .travelPlans h4 {
+	color: #fff;
 	font-family: 'Playfair Display SC', serif;
 	font-size: 40px;
+	margin-top: 20px;
 }
 
-.flightNotes label, .lodgingNotes label, .localTransportation label{
-	color: black;
+/*.flightNotes label, .lodgingNotes label, .localTransportation label{
+	color: fff;
     text-shadow: #FFF 0px 0px 1px;
     -webkit-font-smoothing: antialiased;
 	font-size: 25px;
+	font-family: 'Playfair Display', serif;
+}
+*/
+
+.travelPlansHeading{
+	font-family: 'Playfair Display', serif;
+
 }
 
 /*.flightNotes label, .lodgingNotes label, .localTransportation label:active{
 	color: #660000;
 }*/
+
+.travelPlansHeading{
+	margin-top: 10px;
+	margin-bottom: 27px;
+	font-size: 25px;
+	/*font-weight: bold;*/
+	color: #fff;
+	font-family: 'Playfair Display', serif;
+
+}
+
+#flightBody{
+	color: white;
+	/*font-weight: bold;*/
+	font-family: 'Playfair Display', serif;
+
+}
+
+#lodgingBody{
+	color: white;
+	/*font-weight: bold;*/
+	font-family: 'Playfair Display', serif;
+
+}
+
+#itineraryBody{
+	color: white;
+	/*font-weight: bold;*/
+	font-family: 'Playfair Display', serif;
+
+}
+
+.travelPlansCriteria{
+	color: white;
+	/*font-weight: bold;*/
+	opacity: 0.75;
+	font-family: 'Playfair Display', serif;
+
+}
+
+.lodgingRow {
+	color: white;
+}
+
+.itineraryRow {
+	color: white;
+}
+
+.lodgingDiv{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.flightDiv{
+	margin-top: 20px;
+}
+/*-------------------------------------------*/
 
 .input-field label.active {
 	font-size: medium !important;
@@ -218,7 +285,7 @@ body {
 
 textarea.materialize-textarea {
 	background: white;
-	color: black !important;
+	color: white !important;
 	padding-top: 5px !important;
 	padding-bottom: 5px !important;
 	padding-left: 10px !important;
@@ -244,7 +311,7 @@ textarea.materialize-textarea {
     box-shadow: 0 0 3px gray;
     font-size:12px;
     font-weight:bold;
-	font-family:Garamond,'Apple Garamond','Lucida Sans Unicode';
+	font-family: 'Playfair Display', serif;
 	opacity: 0.5;
 
 	padding-right: 11px;
@@ -257,8 +324,8 @@ textarea.materialize-textarea {
 
 .toDoText{
 	font-size: 20px;
-	font-family:Garamond,'Apple Garamond','Lucida Sans Unicode';
-	font-weight: bold;
+	font-family: 'Playfair Display', serif;
+	/*font-weight: bold;*/
 	color: white;
 }
 
@@ -266,17 +333,17 @@ textarea.materialize-textarea {
 	font-size: 20px;
 	 opacity: 0.6;
 	 color: #fff;
-	 font-weight: bold;
+	 /*font-weight: bold;*/
+	 font-family: 'Playfair Display', serif;
 }
 
 #addTodo{
-	font-family:Garamond,'Apple Garamond','Lucida Sans Unicode';
-	font-weight: bold;
+	font-family: 'Playfair Display', serif;
+	/*font-weight: bold;*/
 	color: white;
 }
 
 .travelPlansText{
-
 	font-size: 40px;
 	margin-bottom: 5px;
 	text-align: center;
@@ -294,7 +361,6 @@ textarea.materialize-textarea {
 	z-index: 99;
 }
 
-
 button{
 	margin-top: -3px;
 	float: left;
@@ -302,36 +368,6 @@ button{
 }
 
 
-.travelPlansHeading{
-	margin-top: 10px;
-	margin-bottom: 27px;
-	font-size: 25px;
-	font-weight: bold;
-	color: #fff;
-}
-
-#flightBody{
-	color: black;
-	font-weight: bold;
-}
-
-#lodgingBody{
-	color: black;
-	font-weight: bold;
-}
-
-#itineraryBody{
-	color: black;
-	font-weight: bold;
-}
-
-.travelPlansCriteria{
-
-	color: black;
-	font-weight: bold;
-	opacity: 0.75;
-
-}
 
 /*-------navBar moved---------------*/
 
@@ -360,6 +396,8 @@ button{
 	z-index: 99;
 	position: fixed;
 	text-align: center;
+	/*margin-right: 40px;*/
+	margin-left: -60px;
 	/*top: 0;*/
 	background: transparent;
 	font-weight: normal;
