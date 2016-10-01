@@ -12,17 +12,7 @@ function getLodgingKeys() {
 function getItineraryKeys() {
 	return itineraryKeys;
 }
-function initializeFireBase () {
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCOiOmJPHiGc5B6FTruCsIOZaME26fkN1s",
-    authDomain: "flight-table.firebaseapp.com",
-    databaseURL: "https://flight-table.firebaseio.com",
-    storageBucket: "flight-table.appspot.com",
-    messagingSenderId: "771389772340"
-  };
-  firebase.initializeApp(config);
-}
+
 // Firebase Listener
 function getRef(endpoint) {
 	var ref;

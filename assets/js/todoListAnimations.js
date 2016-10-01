@@ -1,101 +1,65 @@
 
+var myTaskRemoval = null;
 
-// click function that adds a strike through
-//9/23 - unecessary because of Materialize
-
-// $('.userInput').on('click', function() {
-
-// 	if (this.id === 'activeTodo') {
-// 		$(this).wrap('<del>').attr('id', 'unactiveTodo');
-// 	} else if (this.id === 'unactiveTodo') {
-// 		$(this).attr('id', 'activeTodo')
-// 	}
-// });
-
-//pushing up new to-do on the form/list
+function addTask(item) {
+    var strikeThrough;
+    var newDiv = $('<div>').addClass('toDoText');
+    newDiv.html(item);
+    var deleteButton = $("<button class='round-button toDoTextBtn'>").html("x");
+    var task = $(newDiv).append(deleteButton);
+ 
+    $("#toDoForms").append(task);
+}
+function updateUIGetToDoListValue(list) {
 
 
-    var toDoCount = 0;
-
-    function addTodo() {
-        var userInput = $('.addTodo').val().trim();
-        console.log(userInput);
-    };
-
-
-
-    function addTask() {
-
-        toDoCount++;
-
-        var strikeThrough;
-
-        var newTask = $("#addTodo").val().trim();
-
-        var newDiv = $("<div class='toDoText'>");
-
-        newDiv.html(newTask);
-
-        var deleteButton = $("<button class='round-button'>").html("x");
-
-        var task = $(newDiv).append(deleteButton);
-
-
-        task.click(function() {
-
-
-            if (strikeThrough) {
-
-                strikeThrough = false;
-
-            } else {
-
-                strikeThrough = true;
-
-            }
-
-            if (strikeThrough) {
-                $(this).addClass('strikeThrough');
-
-            } else {
-
-
-                $(this).removeClass('strikeThrough');
-
-            }
-
-
-        });
-
-       
-
-        $("#toDoForms").append(task);
-        $("#addTodo").val("");
-
-        $("#toDoCount").html(toDoCount + " to do");
-
+    $("#toDoForms").empty();
+    list.forEach(function (item) {
+        addTask(item);
+    });
+    if (list.length == 0) {
+        $("#toDoCount").html('');
+    } else {
+        $("#toDoCount").html(list.length);   
     }
+    
+    if (myTaskRemoval == null) {
+        console.log('setInterval: removeTask');
+        myTaskRemoval = setInterval(removeTask, 15000);
+    }
+}
 
-
-
-    $("#addTodo").on('keyup', function(event) {
-
-        if (event.which === 13) {
-
-            addTask();
+function removeTask(){
+    var preLength = getValiseToDoList().length;
+    if (preLength == 0) return;
+    $(".toDoText").each(function (i) {
+        if ($(this).hasClass('strikeThrough')) {
+            setValiseToDoList(i, 'undefined');
         }
     });
 
-
-
-
-
-	function removeTask(){
-
-	$(".strikeThrough").remove();
+    filterValiseToDoList('undefined');
+    var postLength = getValiseToDoList().length;
+    if (postLength < preLength) {
+        $('.strikeThrough').remove();
+        setFBList();
+    }
 }
- 	
-	var myTaskRemoval = setInterval(removeTask, 30000);
+// Listeners
+function enterAddToDo(event) {
+    if (event.which === 13) {
+        var newTask = $("#addTodo").val().trim();
+
+        addValiseToDoList(newTask);
+        $("#addTodo").val("");
+        setFBList();
+    }   
+}
+
+function clickToDoTextBtn() {
+    //console.log('clickToDoTextBtn');
+    $(this).parent().toggleClass('strikeThrough');
+}
 
 
 

@@ -1,5 +1,5 @@
 function updateUILogInSucess (){
-
+  // Do nothing 
 }
 
 
@@ -11,18 +11,28 @@ function updateUIGetUserValue(userObj) {
 
 };
 
-
-
 function updateUIAuthErr(err) {
     //displayErr(err);
     console.log(err);
 };
 
-function clickSignOutBtn() {
- signOut();
- location.href = "landingPage.html";
+function updateUILogOutSucess() {
+  location.href = "landingPage.html";
 }
 
+
+function displayUIErr(sel, msg) {
+  $(sel).html(msg);
+}
+
+
+function clickSignOutBtn() {
+ signOut();
+}
+
+function addListener(sel, eve, fn) {
+  $(document).on(eve, sel, fn);
+}
 
 $(document).ready(readyFn);
 
@@ -44,10 +54,9 @@ $('.parallax').parallax();
   addLodgingListeners();
   addItineraryListeners();
 
-  //addListener('#addToDoList', 'click', clickAddToDoList);
-  //addListener('.editItem', 'click', clickEditItem);
-  //addListener('.deleteItem', 'click', clickDeleteItem);
-
+  // Listeners for To Do List
+  addListener('#addTodo', 'keyup', enterAddToDo);
+  addListener('.toDoTextBtn', 'click', clickToDoTextBtn);
 
 };
 

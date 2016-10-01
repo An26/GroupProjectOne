@@ -13,14 +13,14 @@ function User(name, city, country, date) {
 // Initialize Firebase
 
 function initializeFireBase () {
-	 var config = {
-    	apiKey: "AIzaSyCxOHLv_eX3M4kSkbVwxXbNjcmtlwen6Mc",
-   		authDomain: "valise-e4cc8.firebaseapp.com",
-    	databaseURL: "https://valise-e4cc8.firebaseio.com",
-    	storageBucket: "valise-e4cc8.appspot.com",
-    	messagingSenderId: "808529771284"
-  	};
-  	firebase.initializeApp(config);
+  var config = {
+    apiKey: "AIzaSyDVzXGvyebj5MWCX7UI_jJpQwSaRrCoaFo",
+    authDomain: "valise-new.firebaseapp.com",
+    databaseURL: "https://valise-new.firebaseio.com",
+    storageBucket: "",
+    messagingSenderId: "922111312015"
+  };
+  firebase.initializeApp(config);
 }
 
 function getRef(endpoint) {
@@ -77,7 +77,10 @@ function getUserValue(snapshot) {
 }
 function getToDoListValue(snapshot) {
 	console.log('getToDoListValue');
-	if (snapshot.val() == null) return;
+	if (snapshot.val() == null) {
+		updateUIGetToDoListValue([]);
+		return;
+	}
 	console.log('snapshot.key: ' + snapshot.key);
 	console.log(snapshot.val());
 	toDoList = snapshot.val();
@@ -102,6 +105,17 @@ function deleteValiseToDoList(index) {
 }
 function getValiseToDoList() {
 	return toDoList.list;
+}
+function filterValiseToDoList(filter) {
+	var list = toDoList.list;
+	var filteredList = list.filter(function(item) {
+		if (item != filter) {
+			return true;
+		} else {
+			return false;
+		}
+	})
+	toDoList.list = filteredList;
 }
 function setUser(userObj) {
 	var uid = getCurrentUserUID();

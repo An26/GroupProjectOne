@@ -95,10 +95,10 @@ function anonymousSignIn(morePage, uid) {
     .auth()
     .signInAnonymously()
     .then(function(user){
-        updateUILogInSucess();
+        //updateUILogInSucess();
         // Trigger initial load.
         addFBListenter('user'); 
-        //addFBListenter('toDoList');
+        addFBListenter('toDoList');
         addTravelPlanFBListenters('flight');
         addTravelPlanFBListenters('lodging');
         addTravelPlanFBListenters('itinerary');
