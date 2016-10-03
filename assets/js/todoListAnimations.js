@@ -24,7 +24,7 @@ function updateUIGetToDoListValue(list) {
     }
     
     if (myTaskRemoval == null) {
-        console.log('setInterval: removeTask');
+        //console.log('setInterval: removeTask');
         myTaskRemoval = setInterval(removeTask, 15000);
     }
 }

@@ -9,7 +9,7 @@ function updateUIGetUserValue(userObj) {
 
 function updateUIAuthErr(err) {
     //displayErr(err);
-    console.log(err);
+    console.error(err);
 };
 
 function updateUILogOutSucess() {
@@ -33,9 +33,9 @@ function addListener(sel, eve, fn) {
 
 function weatherAPI(user) {
     
-    console.log(user);
+    //console.log(user);
     var travelCity = user.city; 
-     console.log(travelCity);
+     //console.log(travelCity);
     var userName = user.name;
     var travelDate = user.date;
     var travelCountry = user.country; 
@@ -57,10 +57,10 @@ function weatherAPI(user) {
           .done(function(response) {
 
               // Log the queryURL
-              console.log(queryURL);
+              //console.log(queryURL);
 
               // Log the resulting object
-              console.log(response);
+              //console.log(response);
 
               // Transfer content to HTML
               $('.city').html("<h3>" + travelCity + '<br>' + " Weather Details</h3>");
@@ -74,9 +74,9 @@ function weatherAPI(user) {
         $('.weatherIcon').html("<img src='http://openweathermap.org/img/w/" + response.weather[0].icon + ".png' alt='Icon depicting current weather.' height='70px' width='70px'>");
 
               // Log the data in the console as well
-              console.log("Wind Speed: " + response.wind.speed);
-              console.log("Humidity: " + response.main.humidity);
-              console.log("Temperature (F): " + response.main.temp);
+              //console.log("Wind Speed: " + response.wind.speed);
+              //console.log("Humidity: " + response.main.humidity);
+              //console.log("Temperature (F): " + response.main.temp);
 
  
               return false
@@ -161,7 +161,7 @@ $.ajax({
   })
   .done(function(response) {
     var results = response.value;
-    console.log(response);
+    //console.log(response);
 
 
     //appending articles to the newsBox section
@@ -192,7 +192,7 @@ function readyFn() {
 
 $('.parallax').parallax();
 
-  console.log('Test Backend toDoList');
+  //console.log('Test Backend toDoList');
 
   initializeFireBase(); //***
   reLogin(); //***

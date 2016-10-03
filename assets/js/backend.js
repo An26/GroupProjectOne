@@ -57,32 +57,32 @@ function removeFBListener(endpoint) {
 }
 function removeFBListeners() {
 	var uid = firebase.auth().currentUser.uid;
-	console.log('uid: ' + uid);
+	//console.log('uid: ' + uid);
 	removeFBListener('user'); 
 	removeFBListener('toDoList');
 }
 // Firebase Listeners
 function getUserValue(snapshot) {
-	console.log('getUserValue');
+	//console.log('getUserValue');
 	// when the user sign up first time, no snapshot.val()
 	// is defined. Do nothing.
 	if (snapshot.val() == null) return;
 
-	console.log('snapshot.key: ' + snapshot.key);
-	console.log(snapshot.val());
+	//console.log('snapshot.key: ' + snapshot.key);
+	//console.log(snapshot.val());
 	setValiseUser(snapshot.val());
 	// Update UI
 	updateUIGetUserValue(getValiseUser());
  
 }
 function getToDoListValue(snapshot) {
-	console.log('getToDoListValue');
+	//console.log('getToDoListValue');
 	if (snapshot.val() == null) {
 		updateUIGetToDoListValue([]);
 		return;
 	}
-	console.log('snapshot.key: ' + snapshot.key);
-	console.log(snapshot.val());
+	//console.log('snapshot.key: ' + snapshot.key);
+	//console.log(snapshot.val());
 	toDoList = snapshot.val();
 	updateUIGetToDoListValue(toDoList.list);
 }

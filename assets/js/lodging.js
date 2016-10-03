@@ -81,7 +81,7 @@ function enterLodgingInput(event) {
 					address: address,
 					beginningTime: beginningTime,
 					endTime: endTime};
-		console.log(lodging);
+		//console.log(lodging);
 		$('#lodgingName').val('');
 		$('#lodgingAddress').val('');
 		$('#beginningTime').val('');

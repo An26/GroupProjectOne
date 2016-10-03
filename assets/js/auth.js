@@ -44,7 +44,7 @@ function signOut() {
     });    
 }
 function loginSuccess(user) {
-    console.log('loginSuccess');
+    //console.log('loginSuccess');
     //console.log('uid: ' + user.uid);
     //console.log('Anonymous: ' + user.isAnonymous);
     //console.log('email: ' + user.email);

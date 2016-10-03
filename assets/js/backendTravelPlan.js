@@ -41,76 +41,76 @@ function addTravelPlanFBListenters(endpoint) {
 }
 
 function getFlightChildAdded(childSnapshot) {
-	console.log('getFlightChildAdded');
+	//console.log('getFlightChildAdded');
 	if (childSnapshot.val() == null) return;
-	console.log(childSnapshot.val());
-	console.log('childSnapshot.key: ' + childSnapshot.key);
+	//console.log(childSnapshot.val());
+	//console.log('childSnapshot.key: ' + childSnapshot.key);
 	updateUIGetFlightChildAdded(childSnapshot.val());
 	flightKeys.push(childSnapshot.key);
 }
 function getFlightChildChanged(childSnapshot) {
-	console.log('getFlightChildChanged');
+	//console.log('getFlightChildChanged');
 	if (childSnapshot.val() == null) return;
-	console.log(childSnapshot.val());
-	console.log('childSnapshot.key: ' + childSnapshot.key);
+	//console.log(childSnapshot.val());
+	//console.log('childSnapshot.key: ' + childSnapshot.key);
 	var index = flightKeys.indexOf(childSnapshot.key);
 	updateUIGetFlightChildChanged(index, childSnapshot.val());
 }
 function getFlightChildRemoved(childSnapshot) {
-	console.log('getFlightChildRemoved');
+	//console.log('getFlightChildRemoved');
 	if (childSnapshot.val() == null) return;
-	console.log(childSnapshot.val());
-	console.log('childSnapshot.key: ' + childSnapshot.key);
+	//console.log(childSnapshot.val());
+	//console.log('childSnapshot.key: ' + childSnapshot.key);
 	var index = flightKeys.indexOf(childSnapshot.key);
 	updateUIGetFlightChildRemoved(index);
 	flightKeys.splice(index, 1);
 }
 function getLodgingChildAdded(childSnapshot) {
-	console.log('getLodgingChildAdded');
+	//console.log('getLodgingChildAdded');
 	if (childSnapshot.val() == null) return;
-	console.log(childSnapshot.val());
-	console.log('childSnapshot.key: ' + childSnapshot.key);
+	//console.log(childSnapshot.val());
+	//console.log('childSnapshot.key: ' + childSnapshot.key);
 	updateUIGetLodgingChildAdded(childSnapshot.val());
 	lodgingKeys.push(childSnapshot.key);
 }
 function getLodgingChildChanged(childSnapshot) {
-	console.log('getLodgingChildChanged');
+	//console.log('getLodgingChildChanged');
 	if (childSnapshot.val() == null) return;
-	console.log(childSnapshot.val());
-	console.log('childSnapshot.key: ' + childSnapshot.key);
+	//console.log(childSnapshot.val());
+	//console.log('childSnapshot.key: ' + childSnapshot.key);
 	var index = lodgingKeys.indexOf(childSnapshot.key);
 	updateUIGetLodgingChildChanged(index, childSnapshot.val());
 }
 function getLodgingChildRemoved(childSnapshot) {
-	console.log('getLodgingChildRemoved');
+	//console.log('getLodgingChildRemoved');
 	if (childSnapshot.val() == null) return;
-	console.log(childSnapshot.val());
-	console.log('childSnapshot.key: ' + childSnapshot.key);
+	//console.log(childSnapshot.val());
+	//console.log('childSnapshot.key: ' + childSnapshot.key);
 	var index = lodgingKeys.indexOf(childSnapshot.key);
 	updateUIGetLodgingChildRemoved(index);
 	lodgingKeys.splice(index, 1);
 }
 function getItineraryChildAdded(childSnapshot) {
-	console.log('getItineraryChildAdded');
+	//console.log('getItineraryChildAdded');
 	if (childSnapshot.val() == null) return;
-	console.log(childSnapshot.val());
-	console.log('childSnapshot.key: ' + childSnapshot.key);
+	//console.log(childSnapshot.val());
+	//console.log('childSnapshot.key: ' + childSnapshot.key);
 	updateUIGetItineraryChildAdded(childSnapshot.val());
 	itineraryKeys.push(childSnapshot.key);
 }
 function getItineraryChildChanged(childSnapshot) {
-	console.log('getItineraryChildChanged');
+	//console.log('getItineraryChildChanged');
 	if (childSnapshot.val() == null) return;
-	console.log(childSnapshot.val());
-	console.log('childSnapshot.key: ' + childSnapshot.key);
+	//console.log(childSnapshot.val());
+	//console.log('childSnapshot.key: ' + childSnapshot.key);
 	var index = itineraryKeys.indexOf(childSnapshot.key);
 	updateUIGetItineraryChildChanged(index, childSnapshot.val());
 }
 function getItineraryChildRemoved(childSnapshot) {
-	console.log('getItineraryChildRemoved');
+	//console.log('getItineraryChildRemoved');
 	if (childSnapshot.val() == null) return;
-	console.log(childSnapshot.val());
-	console.log('childSnapshot.key: ' + childSnapshot.key);
+	//console.log(childSnapshot.val());
+	//console.log('childSnapshot.key: ' + childSnapshot.key);
 	var index = itineraryKeys.indexOf(childSnapshot.key);
 	updateUIGetItineraryChildRemoved(index);
 	itineraryKeys.splice(index, 1);
@@ -123,8 +123,8 @@ function pushData(endpoint, object) {
 }
 function setData(endpoint, key, object) {
 	// Changed or remove object from firebase
-	console.log('setData.key: ' + key);
-	console.log(object);
+	//console.log('setData.key: ' + key);
+	//console.log(object);
 	var uid = getCurrentUserUID();
 	firebase.database().ref('/' + endpoint + '/'  + uid + '/' + key).set(object);
 }

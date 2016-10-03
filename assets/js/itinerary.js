@@ -76,7 +76,7 @@ function enterItineraryInput(event) {
 					time: time,
 					activity: activity,
 					fee: fee};
-		console.log(itinerary);
+		//console.log(itinerary);
 		$('#itineraryDate').val('');
 		$('#itineraryTime').val('');
 		$('#activity').val('');

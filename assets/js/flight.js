@@ -44,25 +44,6 @@ function addFlightRow(flight) {
 	var td5 = $('<td>').append(i5);
 	var finalBody =tr.append(td1).append(td2).append(td3).append(td4).append(td5);
 	finalBody.insertBefore($('#flightInput'));
-
-/*
-
-	var tr = $('<tr>').addClass('flightRow').data('index', getFlightKeys().length);
-	var i1 = flight.departureCity;
-	var td1 = $('<td>').html(i1);
-	var i2 = flight.departureTime;
-	var td2 = $('<td>').html(i2);
-	var i3 = flight.arrivalCity;
-	var td3 = $('<td>').html(i3);
-	var i4 = flight.arrivalTime;
-	var td4 = $('<td>').html(i4);
-	var i5 = $('<i>').addClass('material-icons flightRemoveBtn').html('remove_circle');
-	var td5 = $('<td>').append(i5);
-	var finalBody =tr.append(td1).append(td2).append(td3).append(td4).append(td5);
-	finalBody.insertBefore($('#flightInput'));
-*/
-
-
 }
 function changeFlightRow(index, flight) {
 	// get <tr>
@@ -101,7 +82,7 @@ function enterFlightInput(event) {
 					departureTime: departureTime,
 					arrivalCity: arrivalCity,
 					arrivalTime: arrivalTime};
-		console.log(flight);
+		//console.log(flight);
 		$('#departureCity').val('');
 		$('#departureTime').val('');
 		$('#arrivalCity').val('');
