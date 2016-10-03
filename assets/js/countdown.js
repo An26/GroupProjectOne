@@ -1,7 +1,3 @@
-function updateUILogInSucess (){
-  // Do nothing 
-}
-
 
 function updateUIGetUserValue(userObj) {
   // userObj is retrieved from Firebase at this point of time
@@ -34,31 +30,6 @@ function addListener(sel, eve, fn) {
   $(document).on(eve, sel, fn);
 }
 
-$(document).ready(readyFn);
-
-
-
-function readyFn() {
-
-$('.parallax').parallax();
-
-  console.log('Test Backend toDoList');
-
-  initializeFireBase(); //***
-  reLogin(true); //***
-
-
-  addListener('#signOutBtn', 'click', clickSignOutBtn);
-
-  addFlightListeners();
-  addLodgingListeners();
-  addItineraryListeners();
-
-  // Listeners for To Do List
-  addListener('#addTodo', 'keyup', enterAddToDo);
-  addListener('.toDoTextBtn', 'click', clickToDoTextBtn);
-
-};
 
 function weatherAPI(user) {
     
@@ -167,22 +138,6 @@ function myCountdown() {
               $("#userCountry").html("For Upcoming " + travelCountry + " Travel");
 
 }
-          //Placing the countdown function in an interval that causes it to run every one second 
-          //$('#arrivalDate').val("");
-          //$('#userName').val("");
-          //$('#f_elem_city').val("");
-          //$('#addTravelInfo').addClass("hide");
-         // $('.travelInfoButton').removeClass("hide");
-
-
-
-/*$('.travelInfoButton').on('click', function(){
-    $('#addTravelInfo').removeClass("hide");
-    console.log("I've also been clicked");
-    $('.travelInfoButton').addClass("hide");
-  });*/
-
-
 
 // --------GOOGLE NEWS API-------------An Huynh-------------
 
@@ -213,7 +168,9 @@ $.ajax({
      for (var i = 0; i < results.length; i++) {
       if (!results[i].image) continue; // Sometime image is missing, skip it
       var newArticle = $('<div class="article">');
-      var articleUrlWithImage = $('<a class="articleURL">').attr('target', "_blank").attr('href', results[i].url).html($('<img class="articleThumbnail">').attr('src', results[i].image.thumbnail.contentUrl));
+      var articleUrlWithImage = $('<a class="articleURL">').attr('target', "_blank").attr('href', results[i].url);
+      var img =$('<img class="articleThumbnail">').attr('src', results[i].image.thumbnail.contentUrl);
+      articleUrlWithImage.append(img);
 
       var articleTitle = $('<p class="urlTitle">').html(results[i].name);
 
@@ -226,5 +183,30 @@ $.ajax({
 
 }
 
+// Execution
+$(document).ready(readyFn);
 
-  
+
+
+function readyFn() {
+
+$('.parallax').parallax();
+
+  console.log('Test Backend toDoList');
+
+  initializeFireBase(); //***
+  reLogin(); //***
+
+
+  addListener('#signOutBtn', 'click', clickSignOutBtn);
+
+  addFlightListeners();
+  addLodgingListeners();
+  addItineraryListeners();
+
+  // Listeners for To Do List
+  addListener('#addTodo', 'keyup', enterAddToDo);
+  addListener('.toDoTextBtn', 'click', clickToDoTextBtn);
+
+};
+ 

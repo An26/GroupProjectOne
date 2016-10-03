@@ -39,10 +39,9 @@ function showNextStep() {
     $('#dateInput').val('');
 
     $('#infoBox').show();
-    //$('#toDoListBox').show();
-    //$('#signOutBox').show();
+ 
     $('#signInBox').hide();
-    //$('#infoBox').addClass('col-sm-offset-4');
+ 
 }
 
 function createListItem(item, index) {
@@ -72,7 +71,6 @@ function displayToDoList(list) {
 // Use exact function names
 function updateUILogInSucess() {
     if (isSignIn) {
-        // show main button
 
         location.href="main.html";
 
@@ -83,11 +81,8 @@ function updateUILogInSucess() {
 }
 
 function updateUILogOutSucess() {
-    //$('#toDoList').empty();
-    //hideNextStep();
-    
-   location.href="landingPage.html";
-
+ 
+   location.href="index.html";
 
 }
 
@@ -102,13 +97,7 @@ function updateUIAuthErr(err) {
 function updateUIGetToDoListValue(list) {
     displayToDoList(list);
 }
-/*
-function updateUIChildAdded() {
-	//console.log('updateUIChildAdded');
-	var user = getValiseUser();
-	displayForm(user);	
-}
-*/
+
 //===============================
 
 // Listeners
@@ -219,14 +208,12 @@ function readyFn() {
     console.log('Test Backend');
 
     initializeFireBase();
-    //addFBListenter('user', 'child_added', userChildAdded);
+
     addListener('#signInBtn', 'click', clickSignInBtn);
     addListener('#signUpBtn', 'click', clickSignUpBtn);
     addListener('#signOutBtn', 'click', clickSignOutBtn);
     addListener('#submitBtn', 'click', clickSubmitBtn);
-    //addListener('#addToDoList', 'click', clickAddToDoList);
-    //addListener('.editItem', 'click', clickEditItem);
-    //addListener('.deleteItem', 'click', clickDeleteItem);
+ 
     hideNextStep();
 
 }

@@ -2,7 +2,7 @@
 var valiseUser = null;
 //var loginUser = null;
 var toDoList = {list: []};
-//<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+
 function User(name, city, country, date) {
 	this.name = name;
 	this.city = city;

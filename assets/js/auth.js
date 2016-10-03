@@ -10,9 +10,7 @@ function signIn(email, password) {
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then(function(user){
-        //var uid = user.uid;
         //console.log(uid);
-        //loginUser = user;
         loginSuccess(user);
     })
     .catch(function(err){
@@ -25,9 +23,7 @@ function signUp(email, password) {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then(function(user){
-        //var uid = user.uid;
         //console.log(uid);
-        //loginUser = user;
         loginSuccess(user);
     })
     .catch(function(err){
@@ -81,30 +77,27 @@ function createErr(err) {
 }
 //======================
 
-function reLogin (morePage) {
+function reLogin () {
     var uid = localStorage.getItem(localCredKey);
     if (uid) {
         currentUserUID = uid;
-        anonymousSignIn(morePage, uid);
+        anonymousSignIn(uid);
     } else {
         updateUIAuthErr({code: 'missing-uid', message: 'missing current user uid in local storage'});
     }
 }
-function anonymousSignIn(morePage, uid) {
+function anonymousSignIn(uid) {
     firebase
     .auth()
     .signInAnonymously()
     .then(function(user){
-        //updateUILogInSucess();
         // Trigger initial load.
         addFBListenter('user'); 
         addFBListenter('toDoList');
         addTravelPlanFBListenters('flight');
         addTravelPlanFBListenters('lodging');
         addTravelPlanFBListenters('itinerary');
-        if (morePage) {
-            // if we need to do more
-        }
+
     })
     .catch(function(err) {
         updateUIAuthErr(createErr(err));

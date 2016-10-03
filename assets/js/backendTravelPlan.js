@@ -113,7 +113,7 @@ function getItineraryChildRemoved(childSnapshot) {
 	console.log('childSnapshot.key: ' + childSnapshot.key);
 	var index = itineraryKeys.indexOf(childSnapshot.key);
 	updateUIGetItineraryChildRemoved(index);
-	ItineraryKeys.splice(index, 1);
+	itineraryKeys.splice(index, 1);
 }
 // Called by UI Listeners to update Firebase
 function pushData(endpoint, object) {
