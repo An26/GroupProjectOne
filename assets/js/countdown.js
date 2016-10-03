@@ -93,7 +93,9 @@ function weatherAPI(user) {
 
               // Transfer content to HTML
               $('.city').html("<h3>" + travelCity + '<br>' + " Weather Details</h3>");
-              $(".wind").html("Wind Speed: " + response.wind.speed + " mph");
+              if (response.wind) { // Sometime wind is missing
+                $(".wind").html("Wind Speed: " + response.wind.speed + " mph");
+              }
               $(".humidity").html("Humidity: " + response.main.humidity + "&#37;");
               $(".temp").html("Temperature: " + response.main.temp + "&deg;F");
 
@@ -209,6 +211,7 @@ $.ajax({
 
     //appending articles to the newsBox section
      for (var i = 0; i < results.length; i++) {
+      if (!results[i].image) continue; // Sometime image is missing, skip it
       var newArticle = $('<div class="article">');
       var articleUrlWithImage = $('<a class="articleURL">').attr('target', "_blank").attr('href', results[i].url).html($('<img class="articleThumbnail">').attr('src', results[i].image.thumbnail.contentUrl));
 
