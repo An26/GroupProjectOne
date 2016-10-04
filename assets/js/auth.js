@@ -1,4 +1,4 @@
-var localCredKey = 'valiseCurrentUser';
+
 var currentUserUID = null;
 
 function getCurrentUserUID () {
@@ -49,7 +49,6 @@ function loginSuccess(user) {
     //console.log('Anonymous: ' + user.isAnonymous);
     //console.log('email: ' + user.email);
 
-    localStorage.setItem(localCredKey, user.uid);
     currentUserUID = user.uid;
     updateUILogInSucess();
     // Trigger initial load
@@ -62,7 +61,6 @@ function logOutSuccess() {
     toDoList = { list: []};
     currentUserUID = null;
 
-    localStorage.removeItem(localCredKey);
     updateUILogOutSucess();  
 }
 function createErr(err) {
@@ -76,30 +74,30 @@ function createErr(err) {
     };
 }
 //======================
-
+// After further research, it seems Firebase save some credential info
+// in localStorage. When the page is loaded, onAuthStateChanged()
+// can trigger the initial load of such info. So removing anonymous sign in
+// replace it with onAuthStateChanged
+// index.html: Email/Password Sign in
+// main.html: onAuthStateChanged to reLogin then sign out at the end
 function reLogin () {
-    var uid = localStorage.getItem(localCredKey);
-    if (uid) {
-        currentUserUID = uid;
-        anonymousSignIn(uid);
-    } else {
-        updateUIAuthErr({code: 'missing-uid', message: 'missing current user uid in local storage'});
-    }
-}
-function anonymousSignIn(uid) {
-    firebase
-    .auth()
-    .signInAnonymously()
-    .then(function(user){
-        // Trigger initial load.
-        addFBListenter('user'); 
-        addFBListenter('toDoList');
-        addTravelPlanFBListenters('flight');
-        addTravelPlanFBListenters('lodging');
-        addTravelPlanFBListenters('itinerary');
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          //console.log('isAnonymous: ' + user.isAnonymous);
+          //console.log('user.uid: ' + user.uid);
+          currentUserUID = user.uid;
+          addFBListenter('user');
+          addFBListenter('toDoList');
+          addTravelPlanFBListenters('flight');
+          addTravelPlanFBListenters('lodging');
+          addTravelPlanFBListenters('itinerary');
 
-    })
-    .catch(function(err) {
-        updateUIAuthErr(createErr(err));
+        } else {
+        
+            console.log({code: 'missing-uid', message: 'missing current user uid in local storage'});
+        }
+         // ...
     });
 }
+

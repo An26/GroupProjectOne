@@ -67,9 +67,6 @@ function updateUIAuthErr(err) {
     displayErr(err);
 }
 
-function updateUIGetToDoListValue(list) {
-    displayToDoList(list);
-}
 
 //===============================
 
